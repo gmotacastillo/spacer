@@ -1,0 +1,11 @@
+<div>
+  <h1>Create a new Parking Space</h1>
+  <div>
+    <%= simple_form_for [@user, @garage, @parking_space] do |f|%>
+      <%= f.input :title %>
+      <%= f.input :custom_size %>
+      <%= f.input :custom_price %>
+      <%= f.submit "Create parking space" %>
+    <% end %>
+  </div>
+</div>

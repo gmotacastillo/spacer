@@ -11,8 +11,7 @@ class ParkingSpacesController < ApplicationController
 
   def create
     @parking_space = ParkingSpace.new(parking_space_params)
-    @parking_space.id = @garage.id
-    @parking_space.user = current_user
+    @parking_space.garage_id = @garage.id
     if @parking_space.save
       flash[:notice] = "Parking space created!"
       redirect_to parking_space_path(@parking_space)
