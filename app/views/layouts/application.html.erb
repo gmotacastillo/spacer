@@ -12,6 +12,13 @@
 
   <body>
     <%= render "shared/flashes" %>
+    <!--line below is wrapped by left side div (navbar placing)-->
+    <div class="navigation-dashboard">
+    <%= render "shared/dashboard" %>
+    </div>
+    <!--line below is wrapped by right side div  (content placing)-->
+    <div class="container-input-right-side">
     <%= yield %>
+    </div>
   </body>
 </html>
