@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :parking_spaces, only: [:new, :create]
   end
   resources :parking_spaces, only: [:show, :edit, :update, :destroy]
+  resources :clients
 end
