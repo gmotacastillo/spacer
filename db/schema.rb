@@ -10,9 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_164950) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_105829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "email"
+    t.string "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "garages", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.integer "average_size"
+    t.string "description"
+    t.integer "capacity"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "price"
+    t.index ["user_id"], name: "index_garages_on_user_id"
+  end
+
+  create_table "invoice_spaces", force: :cascade do |t|
+    t.bigint "parking_space_id", null: false
+    t.bigint "invoice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invoice_id"], name: "index_invoice_spaces_on_invoice_id"
+    t.index ["parking_space_id"], name: "index_invoice_spaces_on_parking_space_id"
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.float "price"
+    t.integer "payment_confirmed"
+    t.bigint "client_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_invoices_on_client_id"
+  end
+
+  create_table "parking_spaces", force: :cascade do |t|
+    t.integer "custom_size"
+    t.integer "custom_price"
+    t.string "title"
+    t.bigint "garage_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garage_id"], name: "index_parking_spaces_on_garage_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +85,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_164950) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "garages", "users"
+  add_foreign_key "invoice_spaces", "invoices"
+  add_foreign_key "invoice_spaces", "parking_spaces"
+  add_foreign_key "invoices", "clients"
+  add_foreign_key "parking_spaces", "garages"
 end
