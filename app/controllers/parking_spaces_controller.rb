@@ -20,10 +20,9 @@ class ParkingSpacesController < ApplicationController
     end
   end
 
-  def change_status
-    @parking_space = ParkingSpace.find(params[:id])
-    @parking_space.update(status: params[:status].to_i) if params[:status].present?
-    redirect_to users_dashboard_path
+  def check_availability
+    #to be populated
+    return 1
   end
 
   private
