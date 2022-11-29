@@ -1,13 +1,53 @@
-.container {
-    display: flex;
-    justify-content: left;
+.split {
     height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+  }
+  
+.left {
+    left: 0;
+    height: 100%;
+  }
+  
+.right {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
 }
 
-.signin-containter{
-    height:100%;
+.login-button {
+    background-color: #0089ff;
+    color:white;
+    width: 299px;
+    border-radius: 25px;
+    border-color: black;
 }
 
-.signin-container {
-    height:100%;
+.register-link {
+    text-decoration: none;
 }
+
+.welcome-header {
+    font-weight: 700;
+    padding-left: 75px;
+}
+
+.under-button-div {
+    padding-left: 60px;
+    padding-top: 25px;
+}
+
+.under-button-div a {
+    padding-left: 35px;
+}
+
+.form-input input[type="text"]  {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: grey
+  }
