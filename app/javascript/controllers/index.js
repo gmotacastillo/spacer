@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import NewlotController from "./newlot_controller"
 application.register("newlot", NewlotController)
+
+import ToggleController from "./toggle_controller"
+application.register("toggle", ToggleController)

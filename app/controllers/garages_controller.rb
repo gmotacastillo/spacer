@@ -5,6 +5,7 @@ class GaragesController < ApplicationController
 
   def show
     @garage = Garage.find(params[:id])
+    @parking_spaces = @garage.parking_spaces
   end
 
   def new
