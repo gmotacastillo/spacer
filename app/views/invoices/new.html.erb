@@ -1,0 +1,7 @@
+<%= simple_form_for @invoice do |i| %>
+<%= i.association :client %>
+<%= i.simple_fields_for :clients do |client| %>
+  <%= client.input :first_name %>
+<% end %>
+<%= i.submit %>
+<% end %>

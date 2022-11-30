@@ -6,6 +6,7 @@
     <% else %>
       <% @clients.each do |client| %>
         <%= client.first_name %>
+        <%= link_to "Create invoice", new_client_invoice_path(client.id) %>
       <% end %>
         <% end %>
   </div>
