@@ -20,11 +20,6 @@ class ParkingSpacesController < ApplicationController
     end
   end
 
-  def check_availability
-    #to be populated
-    return 1
-  end
-
   private
 
   def set_garage
