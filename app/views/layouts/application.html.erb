@@ -13,12 +13,15 @@
   <body>
     <%= render "shared/flashes" %>
     <!--line below is wrapped by left side div (navbar placing)-->
-    <div class="navigation-dashboard">
+    <div data-controller="toggle">
+    <div class="container-input-left-side-dashboard">
     <%= render "shared/dashboard" %>
     </div>
+
     <!--line below is wrapped by right side div  (content placing)-->
-    <div class="container-input-right-side">
+    <div class="container-input-right-side" data-toggle-target="page">
     <%= yield %>
+    </div>
     </div>
   </body>
 </html>

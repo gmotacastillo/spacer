@@ -77,7 +77,7 @@ border-bottom-left-radius: 10px;
   text-align: center;
 }
 
-// this is the class for the input (not the dashboard)
+// this is the class for the input in application.html.erb
 .container-input-right-side {
   margin-left: 250px;
   padding: 25px;
@@ -85,10 +85,64 @@ border-bottom-left-radius: 10px;
   height: 100%;
 }
 
+.container-input-left-side-dashboard {
+}
+
+
 
 
 // below is the toggled version of the navbar
 .navigation-dashboard-toggled {
+  // display none as a default that we dont see both
+  display: none;
+  position: fixed;
+  width: 75px;
+  height: 100%;
+  background: $blue;
+  border-left: 10px solid $blue;
+  transition: 0.5s;
+  overflow: hidden;
+}
 
+.navigation-dashboard-toggled ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.navigation-dashboard-toggled ul  {
+  li:nth-child(1) {
+  margin-bottom: 80px;
+  pointer-events: none;
+  }
+  li:nth-child(6) {
+   margin-bottom: 100px;
+   pointer-events: none;
+   }
+ }
+ .navigation-dashboard-toggled ul li a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $white;
 
 }
+.navigation-dashboard-toggled ul li:hover a {
+  color: $blue;
+  background-color: $white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  }
+  .navigation-dashboard-toggled ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+  }

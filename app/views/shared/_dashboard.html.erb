@@ -1,7 +1,12 @@
 <!---blue dashboard here-->
-<div class="container-dashboard" data-controller="toggle">
+
+
+
+
+<div class="container-dashboard" >
         <button  class="icon" data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></button>
-  <div class="navigation-dashboard">
+  <!--this is the big menu---->
+  <div class="navigation-dashboard" data-toggle-target="menu">
     <ul>
       <li>
         <a href="#">
@@ -18,7 +23,7 @@
       <li>
         <a href="#">
           <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
-          <span class="title">Parking View</span>
+          <span class="title">Lot View</span>
         </a>
       </li>
       <li>
@@ -43,6 +48,53 @@
         <a href="#">
           <span class="icon"><i class="fa-regular fa-arrow-right-from-bracket"></i></span>
           <span class="title">Log Out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--this is the collapsed menu---->
+    <div class="navigation-dashboard-toggled" data-toggle-target="menutoggled">
+    <ul>
+      <li>
+        <a href="#">
+          <!---span class="icon" data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></span-->
+          <span class="title">Spacer</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-house"></i></span>
+          <!---span class="title">Dashboard</span-->
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
+          <!--span class="title">Parking View</span-->
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-people-group"></i></span>
+          <!---span class="title">My Clients</span-->
+        </a>
+      </li>
+         <li>
+        <a href="#">
+          <span class="icon"><i class="fa-regular fa-file-invoice"></i></span>
+          <!---span class="title">Invoicing</span--->
+        </a>
+      </li>
+            <li>
+        <a href="#">
+          <span class="icon"><i class="fa-solid fa-gear"></i></span>
+          <!---span class="title">Settings</span-->
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><i class="fa-regular fa-arrow-right-from-bracket"></i></span>
+          <!---span class="title">Log Out</span--->
         </a>
       </li>
     </ul>
