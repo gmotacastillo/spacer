@@ -1,2 +1,37 @@
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
-  data: {turbo: false}) do |f| %>
+<div class="main-container">
+
+  <div class="split left">
+   <div class="centered">
+    <%= image_tag "garage.png", height:609 %>
+   </div>
+  </div>
+
+  <div class="split right">
+  <div class="centered">
+      <h2 class="welcome-header">Welcome</h2>
+      <p>Please enter your login details below</p>
+
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+        
+          <%= f.input :email,
+                      label: false,
+                      placeholder: "Email",
+                      required: false,
+                      class: "form-input",
+                      autofocus: true %>
+          <%= f.input :password,
+                      label: false,
+                      placeholder: "Password",
+                      required: false,
+                      class: "form-input",
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.button :submit, "Log in", class: "login-button" %>
+        
+      <% end %>
+      <div class="under-button-div">
+        <p>Don't have an account?</p>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+
+</div>
