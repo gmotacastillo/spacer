@@ -1,0 +1,14 @@
+<h1>Your Garages:</h1>
+<% if @garages.blank? %>
+    <p>No garages available right now</p>
+    <% else %>
+      <% @garages.each do |garage| %>
+      <%= garage.name %>
+      <%= garage.location %>
+      <p><%= garage.price %>$</p>
+      <%= garage.average_size %>
+      <%= garage.description %>
+      <%= garage.capacity %>
+      <%= link_to "Edit this garage", edit_garage_path(garage) %>
+   <% end %>
+<% end %>

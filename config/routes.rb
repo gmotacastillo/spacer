@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  devise_scope :user do
+    authenticated :user do
+      root 'dashboards#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
   resources :garages do
     resources :parking_spaces, only: [:new, :create]
   end
