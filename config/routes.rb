@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :garages do
     resources :parking_spaces, only: [:new, :create]
   end
-  resources :parking_spaces, only: [:show, :edit, :update, :destroy]
+  resources :parking_spaces, only: [:index, :show, :edit, :update, :destroy]
   resources :clients do
     resources :invoices, only: [:new, :create]
   end
-  resources :invoices, only: [:show]
+  resources :invoices
 end

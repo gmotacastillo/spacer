@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-  before_action :set_client, only: %i[new create]
+  # before_action :set_client, only: %i[new create]
 
   def show
     @invoice = Invoice.find(params[:id])
@@ -22,9 +22,9 @@ class InvoicesController < ApplicationController
 
   private
 
-  def set_client
-    @client = Client.find(params[:client_id])
-  end
+  # def set_client
+  #   @client = Client.find(params[:client_id]) ? Client.find(params[:client_id]) : Client.create()
+  # end
 
   def invoice_params
     params.require(:invoice).permit(:custom_size, :custom_price, :title)

@@ -1,0 +1,16 @@
+<div>
+  <h1>All parking spaces</h1>
+  <div>
+    <% if @garages.blank? %>
+      <p>No garages created.</p>
+    <% else %>
+      <% @garages.each do |garage| %>
+        <%= garage.id %>
+      <% end %>
+        <% end %>
+  </div>
+
+  <%= simple_form_for @garages do |garage| %>
+    <%= f.input :garage %>
+  <% end %>
+</div>
