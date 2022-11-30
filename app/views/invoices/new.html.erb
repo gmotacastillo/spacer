@@ -1,7 +1,25 @@
-<%= simple_form_for @invoice do |i| %>
-<%= i.association :client %>
-<%= i.simple_fields_for :clients do |client| %>
-  <%= client.input :first_name %>
-<% end %>
-<%= i.submit %>
-<% end %>
+<div>
+  <h1>Select or create a client</h1>
+  <%= simple_form_for @invoice do |i| %>
+    <%= i.association :client %>
+    <%= i.simple_fields_for :clients do |client| %>
+      <%= client.input :first_name %>
+      <%= client.input :last_name %>
+      <%= client.input :phone_number %>
+      <%= client.input :email %>
+      <%= client.input :company %>
+    <% end %>
+    <div data-controller="garages">
+      <% @garages.each do |g|  %>
+        <%= g.id %>
+      <% end %>
+    </div>
+    <div data-controller="dates">
+      <%= i.input :start_date %>
+      <%= i.input :end_date %>
+    </div>
+    <div data-garages-target="content content2" data-action="change->garages#display change->dates#display">
+    </div>
+    <%= i.submit %>
+  <% end %>
+</div>
