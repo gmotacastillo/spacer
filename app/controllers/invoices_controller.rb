@@ -13,7 +13,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.new(invoice_params)
     @invoice.client_id = @client.id
     if @invoice.save
-      flash[:notice] = "Parking space created!"
+      flash[:notice] = "Invoice created!"
       redirect_to invoice_path(@invoice)
     else
       render :new

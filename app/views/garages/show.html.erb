@@ -1,7 +1,12 @@
-<div class="container">
-  <div class="d-grid">
-    <% @parking_spaces.each do |space|%>
-    <%= space.custom_size %>
-    <% end %>
+
+<div class="page-container", style="border: 1px solid blue">
+  <div class="filter-bar", style="height: 100px">Filter bar</div>
+  <div class="grid-holder">
+    <div class="car-grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
+      <% @parking_spaces.each do |space|%>
+        <div class="parking-space <% @available ? "success" : "danger"%>">
+          <%= space.id %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>

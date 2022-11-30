@@ -1,4 +1,4 @@
 class InvoiceSpace < ApplicationRecord
-  has_many :invoices
-  has_many :parking_spaces
+  belongs_to :invoices
+  belongs_to :parking_spaces
 end

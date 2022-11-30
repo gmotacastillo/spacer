@@ -1,0 +1,12 @@
+<div>
+  <h1>All clients</h1>
+  <div>
+    <% if @clients.blank? %>
+      <p>No clients created.</p>
+    <% else %>
+      <% @clients.each do |client| %>
+        <%= client.first_name %>
+      <% end %>
+        <% end %>
+  </div>
+</div>
