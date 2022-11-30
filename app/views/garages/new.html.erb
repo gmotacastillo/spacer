@@ -1,0 +1,55 @@
+<div class="main-lot-container">
+  <div class="filter-container">
+    <h1>< November 28, 2022 ></h1>
+  </div>
+  <div class="status-container">
+    <ul>
+      <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
+      <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
+      <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>soon available</li>
+    </ul>
+  </div>
+  <section class="grid-container">
+    <div class="item1">Spot 1</div>
+    <div class="item2">Spot 2</div>
+    <div class="item3">Spot 3</div>
+    <div class="item4">Spot 4</div>
+    <div class="item5">Spot 5</div>
+    <div class="item6">Spot 6</div>
+    <div class="item7">Spot 7</div>
+    <div class="item8">Spot 8</div>
+    <div class="item9">Spot 9</div>
+    <div class="item10">Spot 10</div>
+    <div class="item11">Spot 11</div>
+    <div class="item12">Spot 12</div>
+    <div class="item13">Spot 13</div>
+    <div class="item14">Spot 14</div>
+    <div class="item15">Spot 15</div>
+    <div class="item16">Spot 16</div>
+    <div class="item17">Spot 17</div>
+    <div class="item18">Spot 18</div>
+    <div class="item19">Spot 19</div>
+    <div class="item20">Spot 20</div>
+  </section>
+
+  <%= simple_form_for [@garage], data:{turbo: false} do |f| %>
+        <div class="generate-lot-container" data-controller="newlot">
+          <div class="location" data-newlot-target="questionOne">
+            <h4>Let's create your lot view ...</h4>
+            <h2>Where is your lot located?</h2>
+            <br>
+            <%= f.input :location, placeholder:"Please provide a city ...", label: false%>
+            <br>
+            <%# <%= button "next", data-action="click-»newlot#revealQuestionTwo", label: true %>
+            <%# data-controller="newLot" data-action="click->newLot#next" class:"next-button" %>
+            <button type="button" data-action="click->newlot#revealQuestionTwo"> Next </button>
+          </div>
+          <div class="parking-spots" data-newlot-target="questionTwo">
+            <h3>How many parking spots do you have?</h3>
+            <%= f.input :capacity, placeholder:"e.g.: 45", label: false %>
+            <br>
+            <%= f.submit "Create" %>
+          </div>
+        </div>
+  <% end %>
+</div>

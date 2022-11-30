@@ -1,0 +1,111 @@
+.main-lot-container{
+  position: relative;
+  height: 90vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  border-radius: 25px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  padding-top: 1rem;
+}
+
+.filter-container{
+  display: flex;
+  justify-content: center;
+}
+
+.filter-container > h1{
+  color: #0089FF;
+}
+
+.status-container {
+  margin: 1rem;
+}
+
+.status-container i{
+  margin-right: 1rem;
+}
+
+.status-container ul{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+  list-style-type: none;
+  gap: 8rem;
+}
+
+.grid-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, auto);
+  gap: 10px 50px;
+  /*  grid-column-gap: 50px; -> column-gap  */
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 8rem;
+  max-height: 10rem;
+  min-width: 8rem;
+  max-width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate-lot-container{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #0089FF;
+  opacity: 85%;
+  border-radius: 25px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  box-shadow: rgba(63, 63, 63, 0.767) 0px 0px 20px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+// ------------------ DATE INPUT SETUP---------------
+/* placeholder text style */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #0089FF;
+}
+
+/* regular text style */
+input[type="date"].date-input--has-value::-webkit-datetime-edit-text,
+input[type="date"].date-input--has-value::-webkit-datetime-edit-month-field,
+input[type="date"].date-input--has-value::-webkit-datetime-edit-day-field,
+input[type="date"].date-input--has-value::-webkit-datetime-edit-year-field {
+  color: #0089FF;
+}
+
+input[type="date"]{
+  height: 1rem;
+}

@@ -16,7 +16,11 @@ class GaragesController < ApplicationController
     @garage = Garage.new(garage_params)
     @garage.user = current_user
     if @garage.save
-      redirect_to users_dashboard_path
+      capacity = @garage.capacity
+      capacity.times do
+      ParkingSpace.create!(garage: @garage)
+      end
+      redirect_to garage_path(@garage)
     else
       render :new
     end
