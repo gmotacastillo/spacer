@@ -11,17 +11,16 @@
   </head>
 
   <body>
-    <%= render "shared/flashes" %>
-    <!--line below is wrapped by left side div (navbar placing)-->
-    <div data-controller="toggle">
+  <%= render "shared/flashes" %>
+  <div data-controller="toggle">
     <div class="container-input-left-side-dashboard">
-    <%= render "shared/dashboard" %>
+    <!--below add if statement that dashboard does not appear when login pages-->
+      <%= render "shared/dashboard"  if controller_name != "devise" %>
+      <!--if  current_page?(controller: "sessions" action: "new")--->
     </div>
-
-    <!--line below is wrapped by right side div  (content placing)-->
     <div class="container-input-right-side" data-toggle-target="page">
-    <%= yield %>
+      <%= yield %>
     </div>
-    </div>
+  </div>
   </body>
 </html>
