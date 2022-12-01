@@ -1,21 +1,18 @@
 <%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
-
-
-
 <div class="container-dashboard" >
-        <button  class="icon" data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></button>
+  <button data-toggle-target="button" class="icon" data-action="click->toggle#menu">spaceR</button>
   <!--this is the big menu---->
   <div class="navigation-dashboard" data-toggle-target="menu">
     <ul>
       <li>
-        <a href="#">
+        <%# <a href="#" >
           <!---span class="icon" data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></span-->
           <span class="title">Spacer</span>
-        </a>
+        </a> %>
       </li>
       <li>
-         <%= link_to dashboards_path, data: {turbo_method: :get} do %>
+        <%= link_to dashboards_path, data: {turbo_method: :get} do %>
           <span class="icon"><i class="fa-solid fa-house"></i></span>
           <span class="title">Dashboard</span>
         <% end %>
@@ -25,7 +22,6 @@
           <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
           <span class="title">Lot View</span>
         <% end %>
-
       </li>
       <li>
         <a href="#">
@@ -39,7 +35,7 @@
           <span class="title">Invoicing</span>
         </a>
       </li>
-     <!---down here link to the settings....--->
+      <!---down here link to the settings....--->
           <li>
           <%= link_to edit_user_registration_path, data: {turbo_method: :get} do %>
           <span class="icon"><i class="fa-solid fa-gear"></i></span>
@@ -55,6 +51,7 @@
         <% end %>
       </li>
     </ul>
+    </div>
   </div>
 
 
@@ -70,7 +67,7 @@
       <li>
         <a href="#">
           <!---span class="icon" data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></span-->
-          <span class="title">Spacer</span>
+          <%# <span class="title">Spacer</span> %>
         </a>
       </li>
       <li>
@@ -91,7 +88,7 @@
           <!---span class="title">My Clients</span-->
         </a>
       </li>
-         <li>
+      <li>
         <a href="#">
           <span class="icon"><i class="fa-regular fa-file-invoice"></i></span>
           <!---span class="title">Invoicing</span--->
@@ -110,5 +107,4 @@
         </a>
       </li>
     </ul>
-  </div>
 </div>

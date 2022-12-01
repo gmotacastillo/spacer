@@ -7,8 +7,6 @@ $light-bg: #313D4F;
 div.main-clients-container{
   position: relative;
   height: 90vh;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   margin-right: 2rem;
   margin-left: 2rem;
   border-radius: 25px;
@@ -16,4 +14,31 @@ div.main-clients-container{
   padding: 1rem;
   background-color: white;
   overflow-y: scroll;
+}
+
+.clients-header{
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.projects-table{
+  margin: 1rem;
+}
+
+tr .header-info{
+  background: white;
+}
+
+th{
+  padding-right: 4.5rem;
+}
+
+tr{
+  padding: 1rem;
 }

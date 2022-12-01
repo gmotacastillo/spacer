@@ -13,15 +13,17 @@
 <%# </div> %>
 
 <div class="main-clients-container">
-  <header class="projects-header">
+  <header class="clients-header">
     <h1 class="clients-title">My clients</h1>
     <div class="title">Active Clients</div>
-    <div class="count">| 32 Clients</div>
+    <div class="count">|
+      <%= @clients.count %>
+    </div>
     <i class="zmdi zmdi-download"></i>
   </header>
   <table class="projects-table">
   <thead>
-    <tr>
+    <tr class="header-info">
       <th>Contact name</th>
       <th>Company</th>
       <th># of rented spots</th>
@@ -31,24 +33,18 @@
     </tr>
   </thead>
   <tr>
-    <%= @clients.each do |client| %>
+    <% @clients.each do |client| %>
     <td>
       <p class="item-info"><%= client.first_name %></p>
-      <p class="item-info">Google</p>
     </td>
     <td>
-      <p class="item-info">17th Oct, 15</p>
-      <p class="text-danger">Overdue</p>
+      <p class="item-info"><%= client.company %></p>
     </td>
     <td class="member">
-      <div class="member-info">
-        <p class="item-info">Myrtle Erickson</p>
-        <p class="item-info">UK Design Team</p>
-      </div>
+      <%# <%= client.invoices %>
     </td>
     <td>
       <p class="item-info">$4,670</p>
-      <p class="item-info">Paid</p>
     </td>
     <td class="status">
       <span class="status-text status-orange">In progress</span>
