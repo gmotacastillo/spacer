@@ -39,14 +39,14 @@ body {
   list-style-type: none;
 }
 
- .navigation-dashboard ul  {
- li:nth-child(1) {
- margin-bottom: 80px;
- pointer-events: none;
- }
- li:nth-child(6) {
-  margin-bottom: 100px;
-  }
+.navigation-dashboard ul  {
+li:nth-child(1) {
+margin-bottom: 80px;
+pointer-events: none;
+}
+li:nth-child(6) {
+margin-bottom: 100px;
+}
 }
 .navigation-dashboard ul li a {
   position: relative;
@@ -55,7 +55,6 @@ body {
   align-items: center;
   text-decoration: none;
   color: $white;
-
 }
 
 .navigation-dashboard ul li:hover a {
@@ -75,6 +74,15 @@ border-bottom-left-radius: 10px;
 }
 .navigation-dashboard ul li a .title {
   text-align: center;
+}
+
+.container-dashboard button {
+  background: none;
+  position: absolute;
+  z-index: 1;
+  border: none;
+  color: white;
+  width: 250px;
 }
 
 // this is the class for the input in application.html.erb
@@ -104,6 +112,14 @@ border-bottom-left-radius: 10px;
   overflow: hidden;
 }
 
+.navigation-dashboard-toggled button{
+  position: absolute;
+  z-index: 1;
+  background: none;
+  font-weight: bolder;
+  margin-top: 3rem;
+}
+
 .navigation-dashboard-toggled ul {
   position: absolute;
   top: 0;
@@ -114,16 +130,16 @@ border-bottom-left-radius: 10px;
 }
 
 .navigation-dashboard-toggled ul  {
-  li:nth-child(1) {
-  margin-bottom: 80px;
+li:nth-child(1) {
+margin-bottom: 80px;
+pointer-events: none;
+}
+li:nth-child(6) {
+  margin-bottom: 100px;
   pointer-events: none;
   }
-  li:nth-child(6) {
-   margin-bottom: 100px;
-   pointer-events: none;
-   }
- }
- .navigation-dashboard-toggled ul li a {
+}
+.navigation-dashboard-toggled ul li a {
   position: relative;
   width: 100%;
   display: flex;
