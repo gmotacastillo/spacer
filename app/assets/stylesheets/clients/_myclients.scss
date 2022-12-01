@@ -1,0 +1,19 @@
+@import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/dashboard.scss";
+$bg: #1b2431;
+$light-text: #738297;
+$dark-text: #273142;
+$light-bg: #313D4F;
+
+div.main-clients-container{
+  position: relative;
+  height: 90vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  border-radius: 25px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  padding: 1rem;
+  background-color: white;
+  overflow-y: scroll;
+}

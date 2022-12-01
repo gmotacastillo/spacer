@@ -14,8 +14,8 @@
       <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
       <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
       <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>soon available</li>
-      <button><i class="fa-solid fa-plus"></i></button>
-      <button><i class="fa-sharp fa-solid fa-gear"></i></button>
+      <%= link_to "", new_garage_path, class:"fa-solid fa-plus" %>
+      <%= link_to "", garages_path, class:"fa-sharp fa-solid fa-gear" %>
     </ul>
   </div>
   <div class="grid-holder">
@@ -23,7 +23,10 @@
       <% @parking_spaces.each do |space|%>
         <div class="parking-spaces <% @available ? "success" : "danger"%>">
           <div class="grid-title">
-            <%= space.id %>
+            <div class="space-id"><%= space.id %></div>
+            <div class="link-client-id">
+              <%= link_to "view details",  %>
+            </div>
           </div>
         </div>
       <% end %>

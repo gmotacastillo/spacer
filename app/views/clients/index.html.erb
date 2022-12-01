@@ -1,13 +1,66 @@
-<div>
-  <h1>All clients</h1>
+<%# <div>
+  <h1>My Clients</h1>
   <div>
     <% if @clients.blank? %>
-      <p>No clients created.</p>
-    <% else %>
-      <% @clients.each do |client| %>
-        <%= client.first_name %>
-        <%= link_to "Create invoice", new_client_invoice_path(client.id) %>
-      <% end %>
-        <% end %>
-  </div>
+      <%# <p>No clients created.</p> %>
+    <%# <% else %>
+      <%# <% @clients.each do |client| %>
+        <%# <%= client.first_name %>
+        <%# <%= link_to "Create invoice", new_client_invoice_path(client.id) %>
+      <%# <% end %>
+        <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
+
+<div class="main-clients-container">
+  <header class="projects-header">
+    <h1 class="clients-title">My clients</h1>
+    <div class="title">Active Clients</div>
+    <div class="count">| 32 Clients</div>
+    <i class="zmdi zmdi-download"></i>
+  </header>
+  <table class="projects-table">
+  <thead>
+    <tr>
+      <th>Client name</th>
+      <th>Contact</th>
+      <th># of rented spots</th>
+      <th>Total income</th>
+      <th>Status</th>
+      <th class="text-right">View details</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+      <p class="item-info">New Dashboard</p>
+      <p class="item-info">Google</p>
+    </td>
+    <td>
+      <p class="item-info">17th Oct, 15</p>
+      <p class="text-danger">Overdue</p>
+    </td>
+    <td class="member">
+      <div class="member-info">
+        <p class="item-info">Myrtle Erickson</p>
+        <p class="item-info">UK Design Team</p>
+      </div>
+    </td>
+    <td>
+      <p class="item-info">$4,670</p>
+      <p class="item-info">Paid</p>
+    </td>
+    <td class="status">
+      <span class="status-text status-orange">In progress</span>
+    </td>
+    <td>
+      <form class="form" action="#" method="POST">
+      <select class="action-box">
+        <option>Actions</option>
+        <option>Start project</option>
+        <option>Send for QA</option>
+        <option>Send invoice</option>
+      </select>
+      </form>
+    </td>
+  </tr>
 </div>
