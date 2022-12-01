@@ -22,8 +22,8 @@
   <table class="projects-table">
   <thead>
     <tr>
-      <th>Client name</th>
-      <th>Contact</th>
+      <th>Contact name</th>
+      <th>Company</th>
       <th># of rented spots</th>
       <th>Total income</th>
       <th>Status</th>
@@ -31,8 +31,9 @@
     </tr>
   </thead>
   <tr>
+    <%= @clients.each do |client| %>
     <td>
-      <p class="item-info">New Dashboard</p>
+      <p class="item-info"><%= client.first_name %></p>
       <p class="item-info">Google</p>
     </td>
     <td>
@@ -62,5 +63,6 @@
       </select>
       </form>
     </td>
+    <% end %>
   </tr>
 </div>

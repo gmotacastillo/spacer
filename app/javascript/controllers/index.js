@@ -12,6 +12,3 @@ application.register("newlot", NewlotController)
 
 import ToggleController from "./toggle_controller"
 application.register("toggle", ToggleController)
-
-import DropdownController from "./dropdown_controller"
-application.register("dropdown", DropdownController)
