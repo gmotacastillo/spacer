@@ -1,0 +1,55 @@
+.signup-container {
+    padding: 75px;
+}
+
+.signup-form-container {
+    padding-top: 25px;
+}
+
+.line-class {
+    border-top: 1px solid black;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputs-row-one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 300px;
+}
+
+.inputs-row-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 300px;
+}
+
+.inputs-row-three {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 300px;
+}
+
+.register-button {
+    background-color: #0089ff;
+    color:white;
+    width: 215px;
+    border-radius: 25px;
+    border-color: black;
+}
+
+.input-headers input[type="text"]{
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.signup-header {
+    font-weight: bold;
+}
