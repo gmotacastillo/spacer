@@ -43,14 +43,17 @@ parkingspace4 = ParkingSpace.create(custom_size: 9, custom_price: 75, title: "mo
 parkingspace5 = ParkingSpace.create(custom_size: 8, custom_price: 80, title: "yacht", garage_id: 5)
 
 puts "parkingspaces created"
-puts "Creatings invoicespace.."
-invoice_space1 = InvoiceSpace.create(parking_space_id: 1, invoice_id: 1)
-invoice_space2 = InvoiceSpace.create(parking_space_id: 2, invoice_id: 3)
-invoice_space3 = InvoiceSpace.create(parking_space_id: 3, invoice_id: 2)
-invoice_space4 = InvoiceSpace.create(parking_space_id: 4, invoice_id: 4)
-invoice_space5 = InvoiceSpace.create(parking_space_id: 5, invoice_id: 5)
 
-puts "Invoice_spaces created"
+puts "Creatings clients.."
+
+client1 = Client.create!(first_name: "Bob", last_name: "Schmit", phone_number: "691115147" , email: "bob.schmit@gmail.com", company: "nordica", user_id: 1)
+client2 = Client.create(first_name: "Daniel", last_name: "Biren", phone_number: "6912345147" , email: "daniel.biren@gmail.com", company: "scarpa", user_id: 2)
+client3 = Client.create(first_name: "Joe", last_name: "Koster", phone_number: "69387363" , email: "joekoster@gmail.com", company: "atomic", user_id: 3)
+client4 = Client.create(first_name: "Luc", last_name: "Welter", phone_number: "6453345" , email: "luc.welter@gmail.com", company: "k2", user_id: 4 )
+client5 = Client.create(first_name: "Robert", last_name: "Müller", phone_number: "1000000" , email: "roby.muller@ping.com", company: "bbc", user_id: 5)
+
+puts "Clients created"
+
 puts "Creatings invoices.."
 invoice1= Invoice.create(start_date: "01/01/2021", end_date: "01/01/2023",price: 10,payment_confirmed: 1, client_id: 1)
 invoice2= Invoice.create(start_date: "01/03/2021", end_date: "01/05/2024",price: 11,payment_confirmed: 0, client_id: 2)
@@ -59,12 +62,13 @@ invoice4= Invoice.create(start_date: "09/07/2022", end_date: "01/03/2025",price:
 invoice5= Invoice.create(start_date: "01/03/2023", end_date: "01/05/2027",price: 60,payment_confirmed: 1, client_id: 5)
 
 puts "Invoices created"
-puts "Creatings clients.."
 
-client1 = Client.create(first_name: "Bob" , last_name: "Schmit", phone_number: "691115147" , email: "bob.schmit@gmail.com", company: "nordica", user_id: 1)
-client2 = Client.create(first_name: "Daniel" , last_name: "Biren", phone_number: "6912345147" , email: "daniel.biren@gmail.com", company: "scarpa", user_id: 2)
-client3 = Client.create(first_name: "Joe" , last_name: "Koster", phone_number: "69387363" , email: "joekoster@gmail.com", company: "atomic", user_id: 3)
-client4 = Client.create(first_name: "Luc" , last_name: "Welter", phone_number: "6453345" , email: "luc.welter@gmail.com", company: "k2", user_id: 4 )
-client5 = Client.create(first_name: "Robert" , last_name: "Müller", phone_number: "1000000" , email: "roby.muller@ping.com", company: "bbc", user_id: 5)
 
-puts "Clients created"
+puts "Creatings invoicespace.."
+invoice_space1 = InvoiceSpace.create(parking_space_id: 1, invoice_id: 1)
+invoice_space2 = InvoiceSpace.create(parking_space_id: 2, invoice_id: 3)
+invoice_space3 = InvoiceSpace.create(parking_space_id: 3, invoice_id: 2)
+invoice_space4 = InvoiceSpace.create(parking_space_id: 4, invoice_id: 4)
+invoice_space5 = InvoiceSpace.create(parking_space_id: 5, invoice_id: 5)
+
+puts "Invoice_spaces created"
