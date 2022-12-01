@@ -40,11 +40,17 @@
             <br>
             <%= f.input :location, placeholder:"Please provide a city ...", label: false%>
             <br>
-            <%# <%= button "next", data-action="click-»newlot#revealQuestionTwo", label: true %>
-            <%# data-controller="newLot" data-action="click->newLot#next" class:"next-button" %>
             <button type="button" data-action="click->newlot#revealQuestionTwo"> Next </button>
           </div>
-          <div class="parking-spots" data-newlot-target="questionTwo">
+          <div class="price-question" data-newlot-target="questionTwo">
+            <h4>Let's create your lot view ...</h4>
+            <h2>How much does a parking space cost?</h2>
+            <br>
+            <%= f.input :price, placeholder:"$", label: false%>
+            <br>
+            <button type="button" data-action="click->newlot#revealQuestionThree"> Next </button>
+          </div>
+          <div class="parking-spots" data-newlot-target="questionThree">
             <h3>How many parking spots do you have?</h3>
             <%= f.input :capacity, placeholder:"e.g.: 45", label: false %>
             <br>
