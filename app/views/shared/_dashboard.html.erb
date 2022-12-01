@@ -15,10 +15,10 @@
         </a>
       </li>
       <li>
-        <a href="#">
+         <%= link_to dashboards_path, data: {turbo_method: :get} do %>
           <span class="icon"><i class="fa-solid fa-house"></i></span>
           <span class="title">Dashboard</span>
-        </a>
+        <% end %>
       </li>
       <li>
           <%= link_to garages_path, data: {turbo_method: :get} do %>
