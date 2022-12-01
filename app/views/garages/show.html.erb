@@ -1,12 +1,34 @@
-
-<div class="page-container", style="border: 1px solid blue">
-  <div class="filter-bar", style="height: 100px">Filter bar</div>
+<div class="page-container">
+  <div class="filter-container">
+    <input type="date">
+  </div>
+  <div class="status-container">
+    <ul>
+      <form>
+        <select id="garage-id">
+          <option value="1">Porto</option>
+          <option value="2" selected="selected">Porto</option>
+          <option value="3">Budapest</option>
+        </select>
+      </form>
+      <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
+      <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
+      <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>soon available</li>
+      <%= link_to "", new_garage_path, class:"fa-solid fa-plus" %>
+      <%= link_to "", garages_path, class:"fa-sharp fa-solid fa-gear" %>
+    </ul>
+  </div>
   <div class="grid-holder">
-    <div class="car-grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
+    <div class="grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
       <% @parking_spaces.each do |space|%>
-        <div class="parking-space <% @available ? "success" : "danger"%>">
-          <%= space.id %>
+        <div class="parking-spaces <% @available ? "success" : "danger"%>">
+          <div class="grid-title">
+            <div class="space-id"><%= space.id %></div>
+            <div class="link-client-id">
+              <%= link_to "view details", clients_path %>
+            </div>
+          </div>
         </div>
       <% end %>
-    </div>
+    </ul>
   </div>

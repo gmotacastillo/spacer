@@ -1,20 +1,93 @@
+
+body{
+  background-color: white;
+}
+
 .page-container{
-  flex-grow: 100;
+  position: relative;
+  height: 90vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  border-radius: 25px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  padding: 1rem;
+  background-color: white;
+  overflow-y: scroll;
   .grid-holder{
     height: auto;
-    .car-grid{
+    .grid{
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(6, auto);
+      gap: 10px 50px;
+      /*  grid-column-gap: 50px; -> column-gap  */
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+      margin-left: 2rem;
       display: grid;
       grid-auto-flow: row;
-      background-color: grey;
+      background-color: white;
       margin: 0 auto;
       gap: 5px;
       width: max-content;
-      .parking-space{
-        height: 9em;
-        width: 9em;
-        border-radius: 15px;
-        background-color: white;
+      .parking-spaces{
+        background-color: #70D159;
+        box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+        border-radius: 10px;
+        padding: 1rem;
+        min-height: 8rem;
+        max-height: 10rem;
+        min-width: 8rem;
+        max-width: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .parking-spaces:hover{
+        box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+        transform: scale(1.1, 1.1);
       }
     }
   }
+}
+
+
+.status-container{
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  width: auto;
+}
+
+.status-container ul{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+}
+
+.status-container li{
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+select{
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ul button{
+  border: none;
+  background: none;
+}
+
+.link-client-id{
+  position: relative;
+  z-index: -1;
 }
