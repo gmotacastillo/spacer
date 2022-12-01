@@ -19,10 +19,10 @@
                       placeholder:"******",
                       required: true,
                       input_html: { autocomplete: "new-password", class: "input-headers" } %>
-          <%= f.input :password_confirmation,
+          <%= f.input :repeat_password,
                       required: true,
                       placeholder:"******",
-                      input_html: { autocomplete: "new-password", class: "input-headers" } %>
+                      input_html: { autocomplete: "password-confirmation", class: "input-headers" } %>
         </div>
         <div class="inputs-row-two">
           <%= f.input :company,
