@@ -1,25 +1,65 @@
-<h2>Sign up</h2>
+<div class="signup-container">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
-  <%= f.error_notification %>
+  <h2 class="signup-header">Sign up</h2>
+  <p>Please fill out your credentials below</p>
+  <div class="line-class"></div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+  <div class="signup-form-container">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+      <div class="form-inputs">
+        <div class="inputs-row-one">
+          <%= f.input :email,
+                      placeholder:"johndoe@yahoo.com",
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email", class: "input-headers" }%>
+          <%= f.input :password,
+                      placeholder:"******",
+                      required: true,
+                      input_html: { autocomplete: "new-password", class: "input-headers" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      placeholder:"******",
+                      input_html: { autocomplete: "new-password", class: "input-headers" } %>
+        </div>
+        <div class="inputs-row-two">
+          <%= f.input :company,
+                      placeholder:"Company Inc.",
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "company", class: "input-headers" }%>
+          <%= f.input :first_name,
+                      placeholder:"John",
+                      required: true,
+                      input_html: { autocomplete: "first_name", class: "input-headers" } %>
+          <%= f.input :last_name,
+                      placeholder:"Doe",
+                      required: true,
+                      input_html: { autocomplete: "last_name", class: "input-headers" } %>
+        </div>
+        <div class="inputs-row-three">
+          <%= f.input :vat_number,
+                      placeholder:"ESX9999999R",
+                      required: true,
+                      input_html: { autocomplete: "vat_number", class: "input-headers" }%>
+          <%= f.input :address,
+                      placeholder:"C/Canarias 7, Barcelona",
+                      required: true,
+                      input_html: { autocomplete: "address", class: "input-headers" }%>
+          <%= f.input :country, 
+                      placeholder:"Spain",
+                      as: :string,
+                      required: true,
+                      input_html: { autocomplete: "country", class: "input-headers" }%>
+        </div>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class:"register-button" %>
+      </div>
+    <% end %>
+
+    </div>
+</div>
