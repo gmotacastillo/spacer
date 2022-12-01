@@ -1,14 +1,37 @@
-<h1>Your Garages:</h1>
-<% if @garages.blank? %>
-    <p>No garages available right now</p>
-    <% else %>
-      <% @garages.each do |garage| %>
+<%# <div class="garage-settings-container">
+  <h1>Select a Garage:</h1>
+  <% if @garages.blank? %>
+    <%# <p>No garages available right now</p>
+  <% else %>
+        <%# <% @garages.each do |garage| %>
+            <%# <%= garage.name %>
+            <%# <%= garage.location %>
+            <%# <%= garage.price %>
+            <%# <%= garage.average_size %>
+            <%# <%= garage.description %>
+            <%# <%= garage.capacity %>
+            <%# <%= link_to "Edit this garage", edit_garage_path(garage)%>
+        <%# <% end %>
+  <%# <% end %>
+<%# </div> %>
+
+<div data-controller="dropdown" class="relative">
+  <button type="button" data-action="dropdown#toggle click@window->dropdown#hide">Garages</button>
+
+  <div
+    data-dropdown-target="menu"
+    class="hidden transition transform origin-top-right absolute right-0"
+    data-transition-enter-from="opacity-0 scale-95"
+    data-transition-enter-to="opacity-100 scale-100"
+    data-transition-leave-from="opacity-100 scale-100"
+    data-transition-leave-to="opacity-0 scale-95"
+  >
+    <%# <a href="#" data-action="dropdown#toggle">Account settings</a>
+    <a href="#" data-action="dropdown#toggle">Support</a>
+    <a href="#" data-action="dropdown#toggle">License</a> %>
+    <% @garages.each do |garage| %>
       <%= garage.name %>
-      <%= garage.location %>
-      <p><%= garage.price %>$</p>
-      <%= garage.average_size %>
-      <%= garage.description %>
-      <%= garage.capacity %>
-      <%= link_to "Edit this garage", edit_garage_path(garage) %>
-   <% end %>
-<% end %>
+      <%= link_to "", edit_garage_path(garage) %>
+    <% end %>
+  </div>
+</div>
