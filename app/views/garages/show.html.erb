@@ -1,7 +1,31 @@
-<div class="container">
-  <div class="d-grid">
-    <% @parking_spaces.each do |space|%>
-    <%= space.custom_size %>
-    <% end %>
+<div class="page-container">
+  <div class="filter-container">
+    <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
   </div>
-</div>
+  <div class="status-container">
+    <ul>
+      <form>
+        <select id="garage-id">
+          <option value="1">Porto</option>
+          <option value="2" selected="selected">Porto</option>
+          <option value="3">Budapest</option>
+        </select>
+      </form>
+      <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
+      <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
+      <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>soon available</li>
+      <button><i class="fa-solid fa-plus"></i></button>
+      <button><i class="fa-sharp fa-solid fa-gear"></i></button>
+    </ul>
+  </div>
+  <div class="grid-holder">
+    <div class="grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
+      <% @parking_spaces.each do |space|%>
+        <div class="parking-spaces <% @available ? "success" : "danger"%>">
+          <div class="grid-title">
+            <%= space.id %>
+          </div>
+        </div>
+      <% end %>
+    </ul>
+  </div>
