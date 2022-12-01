@@ -1,11 +1,10 @@
 <%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
 
-
-
-<div class="container-dashboard" >
-        <button  class="icon" data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></button>
   <!--this is the big menu---->
+  <div data-toggle-target="button" class="toggle-nav-button">
+    <button  data-action="click->toggle#menu"><i class="fa-regular fa-bars"></i></button>
+  </div>
   <div class="navigation-dashboard" data-toggle-target="menu">
     <ul>
       <li>
@@ -111,4 +110,3 @@
       </li>
     </ul>
   </div>
-</div>

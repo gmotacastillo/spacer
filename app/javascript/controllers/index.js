@@ -12,3 +12,9 @@ application.register("newlot", NewlotController)
 
 import ToggleController from "./toggle_controller"
 application.register("toggle", ToggleController)
+
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
+import InvoiceController from "./invoice_controller"
+application.register("invoice", InvoiceController)

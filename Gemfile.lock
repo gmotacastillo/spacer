@@ -111,6 +111,7 @@ GEM
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    flatpickr (4.6.11.0)
     font-awesome-sass (6.2.1)
       sassc (~> 2.0)
     globalid (1.0.0)
@@ -145,6 +146,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.13.9-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.9-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
@@ -244,6 +247,7 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-21
   x86_64-linux
 
@@ -254,6 +258,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  flatpickr
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
