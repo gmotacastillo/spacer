@@ -1,5 +1,8 @@
 class ParkingSpacesController < ApplicationController
   before_action :set_garage, only: %i[new create]
+  def index
+    @garages = Garage.where("user_id = ?", current_user.id)
+  end
 
   def show
     @parking_space = ParkingSpace.find(params[:id])
@@ -18,11 +21,6 @@ class ParkingSpacesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def check_availability
-    #to be populated
-    return 1
   end
 
   private

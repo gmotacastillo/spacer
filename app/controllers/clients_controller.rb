@@ -5,7 +5,6 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @invoice = @client.invoice
   end
 
   def new
@@ -13,10 +12,10 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = client.new(client_params)
-    @client.user = current_user
+    @client = Client.new(client_params)
+    @client.user_id = current_user.id
     if @client.save
-      redirect_to users_dashboard_path
+      redirect_to clients_path
     else
       render :new
     end

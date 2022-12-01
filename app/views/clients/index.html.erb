@@ -1,0 +1,13 @@
+<div>
+  <h1>All clients</h1>
+  <div>
+    <% if @clients.blank? %>
+      <p>No clients created.</p>
+    <% else %>
+      <% @clients.each do |client| %>
+        <%= client.first_name %>
+        <%= link_to "Create invoice", new_client_invoice_path(client.id) %>
+      <% end %>
+        <% end %>
+  </div>
+</div>
