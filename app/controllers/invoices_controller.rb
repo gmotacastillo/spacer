@@ -8,11 +8,12 @@ class InvoicesController < ApplicationController
   def new
     @invoice = Invoice.new
     @garages = current_user.garages
-    @parking_spaces = @garages.parking_spaces.where()
   end
 
   def create
     @invoice = Invoice.new(invoice_params)
+
+    #setting client
     if params[:client_id].present?
       @client = Client.find(params[:client_id])
     else
@@ -22,11 +23,18 @@ class InvoicesController < ApplicationController
       email = params[:invoice][:clients][:email]
       company = params[:invoice][:clients][:company]
       @client = Client.create(user_id: current_user.id, first_name: name, last_name: last_name, phone_number: phone_number, email: email, company: company)
-      # @client.first_name = name
     end
     @invoice.client_id = @client.id
+
+    # adding parking spaces
+    parking_spaces = ParkingSpace.find(params[:parking_space])
+    @invoice.parking_spaces << parking_spaces
+
     if @invoice.save!
-      flash[:notice] = "Invoice created!"
+      # calculating price
+      number_of_days = (@invoice.end_date - @invoice.start_date).to_i + 1
+      total = parking_spaces.map{ |e| (e.garage.price * number_of_days) if e.garage.price.present? }.sum
+      @invoice.update(price: total)
       redirect_to invoice_path(@invoice)
     else
       render :new
