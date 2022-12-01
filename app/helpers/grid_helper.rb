@@ -10,7 +10,7 @@ module GridHelper
     when 20..30
       "1fr 1fr 1fr 1fr 1fr"
     else
-      "1fr 1fr 1fr 1fr 1fr 1fr"
+      "1fr 1fr 1fr 1fr 1fr 1fr 1fr"
     end
   end
 end

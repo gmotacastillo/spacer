@@ -4,6 +4,7 @@ class GaragesController < ApplicationController
   end
 
   def show
+    @garages = Garage.where(user: current_user)
     @garage = Garage.find(params[:id])
     @parking_spaces = @garage.parking_spaces
   end

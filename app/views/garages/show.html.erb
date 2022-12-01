@@ -1,15 +1,14 @@
 <div class="page-container">
   <div class="filter-container">
-    <input type="date">
+    <%= form_with url: garage_path(@garage), method: :get do |f| %>
+    <%= f.date_field :date, label: false %>
+    <%= f.submit %>
+    <% end %>
   </div>
   <div class="status-container">
     <ul>
       <form>
-        <select id="garage-id">
-          <option value="1">Porto</option>
-          <option value="2" selected="selected">Porto</option>
-          <option value="3">Budapest</option>
-        </select>
+          <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location)%>
       </form>
       <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
       <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
@@ -18,10 +17,12 @@
       <%= link_to "", garages_path, class:"fa-sharp fa-solid fa-gear" %>
     </ul>
   </div>
+  <%= params[:date] %>
   <div class="grid-holder">
     <div class="grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
       <% @parking_spaces.each do |space|%>
-        <div class="parking-spaces <% @available ? "success" : "danger"%>">
+        <% date = params[:date] ? Date.parse(params[:date]) : Date.today %>
+        <div class="parking-spaces <%= space.unavailable?(date) ? "red" : "green" %>">
           <div class="grid-title">
             <div class="space-id"><%= space.id %></div>
             <div class="link-client-id">
