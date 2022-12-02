@@ -36,12 +36,12 @@
 
 .invoice-left {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 4px;
 }
 
 .invoice-right {
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  box-sizing: content-box;
 }
