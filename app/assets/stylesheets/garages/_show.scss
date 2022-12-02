@@ -12,9 +12,9 @@ body{
   box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
   padding: 1rem;
   background-color: white;
-  overflow-y: scroll;
   .grid-holder{
-    height: auto;
+    overflow-y: scroll;
+    height: 68vh;
     .grid{
       display: grid;
       place-items: center;
