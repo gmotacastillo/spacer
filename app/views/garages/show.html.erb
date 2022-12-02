@@ -6,10 +6,17 @@
     <% end %>
   </div>
   <div class="status-container">
-    <ul>
-      <form>
-          <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location)%>
-      </form>
+    <ul class="status-navbar">
+      <div class="dropdown">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Garages
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <% @garages.each do |garage| %>
+            <li><%= link_to garage.location, garage_path(garage), class: "dropdown-item" %></li>
+          <% end %>
+        </ul>
+      </div>
       <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
       <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
       <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>soon available</li>
@@ -31,5 +38,5 @@
           </div>
         </div>
       <% end %>
-    </ul>
+    </div>
   </div>

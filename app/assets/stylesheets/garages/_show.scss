@@ -58,7 +58,7 @@ body{
   width: auto;
 }
 
-.status-container ul{
+.status-container ul.status-navbar{
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -66,6 +66,7 @@ body{
   align-items: center;
   gap: 10px;
   width: auto;
+  list-style-type: none;
 }
 
 .status-container li{
