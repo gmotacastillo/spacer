@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DatetoggleController from "./datetoggle_controller"
+application.register("datetoggle", DatetoggleController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
@@ -21,5 +24,3 @@ application.register("newlot", NewlotController)
 
 import ToggleController from "./toggle_controller"
 application.register("toggle", ToggleController)
-
-// Comment
