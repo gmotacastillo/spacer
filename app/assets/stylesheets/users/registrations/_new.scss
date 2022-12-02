@@ -53,3 +53,13 @@
 .signup-header {
     font-weight: bold;
 }
+
+.centered {
+    img {
+        width: 700px;
+        height: 100vh;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    }
+}

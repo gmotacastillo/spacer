@@ -18,7 +18,7 @@
       <%= render "shared/dashboard"  if controller_name != "devise" %>
       <!--if  current_page?(controller: "sessions" action: "new")--->
     </div>
-    <div class="container-input-right-side" data-toggle-target="page">
+    <div class="container-input-right-side <%= controller_name == "pages" ? "blue-bcg" : "" %>" data-toggle-target="page">
       <%= yield %>
     </div>
   </div>
