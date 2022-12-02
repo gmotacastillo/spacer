@@ -15,8 +15,8 @@
   <div data-controller="toggle">
     <div class="container-input-left-side-dashboard">
     <!--below add if statement that dashboard does not appear when login pages-->
-    <% if user_signed_in? %>
-      <%= render "shared/dashboard"  if controller_name != "devise" %>
+    <% if user_signed_in?  && controller_name != "pages"%>
+      <%= render "shared/dashboard"  if (controller_name != "devise"  ) %>
     <% end %>
       <!--if  current_page?(controller: "sessions" action: "new")--->
     </div>
