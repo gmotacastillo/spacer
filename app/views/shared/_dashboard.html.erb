@@ -18,7 +18,12 @@
         <% end %>
       </li>
       <li>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.garages.empty? %>
+          <%= link_to new_garage_path, data: {turbo_method: :get} do %>
+          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
+          <span class="title">Lot View</span>
+          <% end %>
+          <% else %>
           <%= link_to garage_path(current_user.garages.last), data: {turbo_method: :get} do %>
           <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
           <span class="title">Lot View</span>
@@ -77,12 +82,17 @@
         <% end %>
       </li>
       <li>
-          <% if user_signed_in? %>
-            <%= link_to garage_path(current_user.garages.last), data: {turbo_method: :get} do %>
-            <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
-            <!--span class="title">Parking View</span-->
-            <% end %>
+        <% if user_signed_in? && current_user.garages.empty? %>
+          <%= link_to new_garage_path, data: {turbo_method: :get} do %>
+          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
+          <span class="title">Lot View</span>
           <% end %>
+          <% else %>
+          <%= link_to garage_path(current_user.garages.last), data: {turbo_method: :get} do %>
+          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
+          <span class="title">Lot View</span>
+          <% end %>
+        <% end %>
       </li>
       <li>
         <%= link_to clients_path, data: {turbo_method: :get} do  %>
