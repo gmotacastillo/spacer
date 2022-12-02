@@ -58,7 +58,7 @@ body{
   width: auto;
 }
 
-.status-container ul{
+.status-container ul.status-navbar{
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -66,6 +66,7 @@ body{
   align-items: center;
   gap: 10px;
   width: auto;
+  list-style-type: none;
 }
 
 .status-container li{
@@ -101,4 +102,41 @@ ul button{
 
 .green{
   background: #70D159;
+}
+
+// date formatting below
+.filter-container{
+
+  // input[type="date"]::-webkit-datetime-edit-text,
+  // input[type="date"]::-webkit-datetime-edit-month-field,
+  // input[type="date"]::-webkit-datetime-edit-day-field,
+  // input[type="date"]::-webkit-datetime-edit-year-field {
+  // display: none;
+  // }
+
+  input {
+    position: relative;
+    width: 150px; height: 20px;
+    color: white;
+  }
+
+  input:before {
+    position: absolute;
+    top: 3px; left: 3px;
+    content: attr(data-date);
+    display: inline-block;
+    color: black;
+  }
+
+  input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+    display: none;
+  }
+
+  input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    color: black;
+    opacity: 1;
+  }
 }

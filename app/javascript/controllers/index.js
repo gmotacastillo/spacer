@@ -4,17 +4,23 @@
 
 import { application } from "./application"
 
+import DatetoggleController from "./datetoggle_controller"
+application.register("datetoggle", DatetoggleController)
+
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import InvoiceController from "./invoice_controller"
+application.register("invoice", InvoiceController)
+
+import NewinvoiceController from "./newinvoice_controller"
+application.register("newinvoice", NewinvoiceController)
 
 import NewlotController from "./newlot_controller"
 application.register("newlot", NewlotController)
 
 import ToggleController from "./toggle_controller"
 application.register("toggle", ToggleController)
-
-import FlatpickrController from "./flatpickr_controller"
-application.register("flatpickr", FlatpickrController)
-
-import InvoiceController from "./invoice_controller"
-application.register("invoice", InvoiceController)

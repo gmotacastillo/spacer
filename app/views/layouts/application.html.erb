@@ -15,10 +15,12 @@
   <div data-controller="toggle">
     <div class="container-input-left-side-dashboard">
     <!--below add if statement that dashboard does not appear when login pages-->
+    <% if user_signed_in? %>
       <%= render "shared/dashboard"  if controller_name != "devise" %>
+    <% end %>
       <!--if  current_page?(controller: "sessions" action: "new")--->
     </div>
-    <div class="container-input-right-side" data-toggle-target="page">
+    <div class="container-input-right-side <%= controller_name == "pages" ? "blue-bcg" : "" %>" data-toggle-target="page">
       <%= yield %>
     </div>
   </div>

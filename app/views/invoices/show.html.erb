@@ -1,5 +1,33 @@
-<%= @invoice.id %>
-<%= @invoice.start_date %>
-<%= @invoice.end_date %>
-<%= @invoice.parking_spaces.to_a %>
-<%= @invoice.price %>
+<div class="page-container">
+  <div class="filter-container-invoice">
+      <div class="filter-container-invoice-left">
+        <h1>Invoice ID#<%= @invoice.id %></h1>
+      </div>
+      <div class="filter-container-invoice-right">
+        <ul>
+          <li><i class="fa-solid fa-1"></i><p>Client info</p></li>
+          <li><i class="fa-solid fa-2"></i><p>Availability</p></li>
+          <li><i class="fa-solid fa-3 text-primary"></i><p class="text-primary">Invoice</p></li>
+        </ul>
+      </div>
+    </div>
+  <div>
+    <div>
+      <h3>Booking period:</h3>
+      <h4>From:</h4>
+        <%= @invoice.start_date %>
+      <h4>To:</h4>
+        <%= @invoice.end_date %>
+    </div>
+    <div>
+    <%# <%= @invoice.parking_spaces.to_a %>
+      <h3>Total price:</h3><p><%= @invoice.price %>€</p>
+    </div>
+    <div>
+      <h4>Parking spaces rented:</h4>
+      <% @invoice.parking_spaces.each do |space| %>
+      <p>Lot #<%= space.id %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
