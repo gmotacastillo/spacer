@@ -1,9 +1,88 @@
 
 <!---<%= Time.now.strftime("%m/%d/%Y") %>---->
-<div>
-  <h1>Welcome to your dashboard <%= @user.first_name %> !</h1>
+<div class="main-container">
+
+
+  <div class="upper-container-for-numbers">
+    <div class="upper-container-items">
+      <p class="number"><%= @sum %>$</p><p class="text">Total earnings</p>
+    </div>
+    <div class="upper-container-items">
+      <p class="number"> <%= @number_of_garages %> <i class="fa-solid fa-house icon-dashboard"></i></p><p class="text">Number of garages</p>
+    </div>
+    <div class="upper-container-items">
+     <p class="number"><%= @number_of_parking_spaces %> <i class="fa-solid fa-clone icon-dashboard"></i></p><p class="text">Number of parkingspaces</p>
+    </div>
+    <div class="upper-container-items">
+       <p class="number"><%= @number_of_clients %> <i class="fa-solid fa-people-group icon-dashboard"></i></p><p class="text">Number of clients</p>
+    </div>
+    <div class="upper-container-items">
+      <p class="number"><%= @invoices_aktiv.count %> <i class="fa-solid fa-file-invoice icon-dashboard"></i></p><p class="text">Activ invoices</p>
+    </div>
+  </div>
+
+  <!---->
+
+  <div class="bottom-container d-flex justify-content-between align-items-start">
+    <div class="bottom-container-left">
+      <h3 class="number">Activ Invoices</h3>
+      <table class="table">
+        <thead>
+          <tr>
+          <th class="text-headers">Name</th>
+          <th class="text-headers">Start date</th>
+          <th class="text-headers">End date</th>
+          <th class="text-headers">Price</th>
+          <th class="text-headers">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @invoices_aktiv.each do |invoice| %>
+            <tr>
+            <td class="text"><%= "#{invoice.client.first_name} #{invoice.client.last_name}" %></td>
+            <td class="text"><%= invoice.start_date %></td>
+            <td class="text"><%= invoice.start_date %></td>
+            <td class="text"><%= invoice.price %></td>
+            <td class="paid-text">Paid</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!---->
+    <div class="bottom-container-right">
+      <h3 class="number">Recent clients</h3>
+      <table class="table">
+        <thead>
+          <tr>
+          <th class="text-headers">Name</th>
+          <th class="text-headers">Company</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @clients.each do |client| %>
+            <tr>
+            <td class="text"><%= "#{client.first_name} #{client.last_name}" %></td>
+            <td class="text"><%= client.company %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
   <!---below div for garages infos--->
-  <div>
+  <!----div>
     <h2>Number of garages: <%= @number_of_garages %> </h2>
     <h2>Your garages:</h2>
     <% @garages.each do |garage| %>
@@ -11,7 +90,7 @@
         <%= garage.location %>
     <% end %>
   </div>
-  <!---below div for parking_spaces infos--->
+
   <div>
     <h2>Number of parkingspaces: <%= @number_of_parking_spaces %></h2>
     <h2>Your parkingspaces:</h2>
@@ -19,7 +98,7 @@
       <%= parkingspace.title %>
     <% end %>
   </div>
-  <!---below div for clients infos--->
+
   <div>
       <h2>Number of clients: <%= @number_of_clients %></h2>
       <h2>Your clients:</h2>
@@ -27,11 +106,11 @@
          <%= client.first_name %>
       <% end %>
   </div>
-   <!---below div for currently rented parkingspaces--->
+
    <div>
-      <!---TOTAL INVOICES--->
+
       <h2>Total invoices: <%= @number_of_invoices_total %></h2>
-       <!---AKTIV  INVOICES--->
+
       <h2>Aktiv invoices: <%= @invoices_aktiv.count %></h2>
       <% @invoices_aktiv.each do |invoice| %>
         <p><%= invoice.start_date %></p>
@@ -40,7 +119,7 @@
         <p><%= invoice.payment_confirmed %></p>
       <% end %>
    </div>
-   <!---below the total money made with the invoice----->
+
    <div>
      <h2>Total income: <%= @sum %>$</h2>
    </div>
