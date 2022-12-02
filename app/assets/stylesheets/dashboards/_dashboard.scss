@@ -1,13 +1,12 @@
-.main-container {
+.dash-main-container {
   position: relative;
-  height: auto;
-  margin-right: 1rem;
-  margin-left: 1rem;
+  height: 90vh;
+  margin-right: 2rem;
+  margin-left: 2rem;
   border-radius: 25px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
   padding: 1rem;
   background-color: white;
-  padding: 15px;
 }
 //upper part
 .upper-container-for-numbers {
@@ -59,7 +58,7 @@ color: rgb(109, 109, 109);
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
   width: 500px;
-  height: 400px;
+  height: auto;
 
 }
 
@@ -69,7 +68,7 @@ color: rgb(109, 109, 109);
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
   width: 800px;
-  height: 400px;
+  height: auto;
 
 }
 
