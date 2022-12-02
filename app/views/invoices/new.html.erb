@@ -1,29 +1,57 @@
-<div>
-  <h1>Select or create a client</h1>
-  <%= simple_form_for @invoice do |i| %>
-    <%= i.association :client %>
-    <%= i.simple_fields_for :clients do |client| %>
-      <%= client.input :first_name %>
-      <%= client.input :last_name %>
-      <%= client.input :phone_number %>
-      <%= client.input :email %>
-      <%= client.input :company %>
-    <% end %>
-    <div data-controller="invoice">
-      <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage"}%>
-      <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } }  %>
-      <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
-      <div data-invoice-target="spaces">
-        <% ParkingSpace.all.each do |e| %>
-        <% e.garage.price = 20 %>
-        <div data-invoice-target="checkbox" style="display: none;" data-garageid=<%= e.garage.id%>>
-          <%= label_tag  "parking_space[]", e.id %>
-          <%= check_box_tag "parking_space[]", e.id, false, multiple: true, data: {action: "change->invoice#previewPrice", price: e.garage.price.to_i } %>
-        </div>
-        <% end %>
-      </div>
-      <div>Total<span data-invoice-target="price"></span>€</div>
+<div class="page-container">
+  <div class="filter-container-invoice">
+    <div class="filter-container-invoice-left">
+      <h1>Generate invoice</h1>
     </div>
+    <div class="filter-container-invoice-right">
+      <ul>
+        <li><i class="fa-solid fa-1"></i><p>Client info</p></li>
+        <li><i class="fa-solid fa-2"></i><p>Availability</p></li>
+        <li><i class="fa-solid fa-3"></i><p>Invoice</p></li>
+      </ul>
+    </div>
+  </div>
+    <%= simple_form_for [@invoice], data:{turbo: false} do |i| %>
+    <div data-controller="newinvoice">
+      <div  data-newinvoice-target="questionOne">
+        <%= i.input :client, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first %>
+        <%= i.simple_fields_for :clients do |client| %>
+            <div class="invoice-client-container">
+              <div>
+                <%= client.input :company %>
+                <%= client.input :first_name %>
+              </div>
+              <div>
+                <%= client.input :last_name %>
+                <%= client.input :phone_number %>
+              </div>
+              <div>
+                <%= client.input :email %>
+              </div>
+            </div>
+        <% end %>
+        <button type="button" data-action="click->newinvoice#revealQuestionTwo" class="login-button"> Next </button>
+      </div>
+      <div class="spots-to-rent">
+        <div data-newinvoice-target="questionTwo" data-controller="invoice">
+          <h4><strong>Which spots would you like to rent out?</strong></h4>
+          <h5>Select a lot</h5>
+          <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage"}%>
+          <h5>Booking period</h5>
+          <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } }  %>
+          <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+          <div data-invoice-target="spaces">
+            <% ParkingSpace.all.each do |e| %>
+            <% e.garage.price = 20 %>
+            <div data-invoice-target="checkbox" style="display: none;" data-garageid=<%= e.garage.id%>>
+              <%= label_tag  "parking_space[]", e.id %>
+              <%= check_box_tag "parking_space[]", e.id, false, multiple: true, data: {action: "change->invoice#previewPrice", price: e.garage.price.to_i } %>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  <div>Total<span data-invoice-target="price"></span>€</div>
     <%= i.submit %>
+  </div>
   <% end %>
 </div>
