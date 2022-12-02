@@ -17,7 +17,6 @@
       <%= link_to "", garages_path, class:"fa-sharp fa-solid fa-gear" %>
     </ul>
   </div>
-  <%= params[:date] %>
   <div class="grid-holder">
     <div class="grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
       <% @parking_spaces.each do |space|%>

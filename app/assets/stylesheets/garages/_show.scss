@@ -58,6 +58,11 @@ body{
   width: auto;
 }
 
+.status-container a:visited, a{
+  text-decoration: none;
+  color: black;
+}
+
 .status-container ul{
   display: flex;
   flex-direction: row;
@@ -115,16 +120,30 @@ ul button{
 
   input {
     position: relative;
-    width: 150px; height: 20px;
+    width: 300px; height: 2rem;
     color: white;
+    border: 1px;
+    outline: none;
+    cursor: pointer;
   }
 
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    width: 200px;
+    opacity: none;
+}
+
   input:before {
+    padding-top: 1rem;
     position: absolute;
-    top: 3px; left: 3px;
     content: attr(data-date);
     display: inline-block;
-    color: black;
+    color: rgb(0, 106, 255);
+    padding-bottom: 1rem;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
   }
 
   input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
@@ -136,6 +155,6 @@ ul button{
     top: 3px;
     right: 0;
     color: black;
-    opacity: 1;
+    opacity: 0;
   }
 }
