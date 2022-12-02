@@ -32,6 +32,9 @@ garage2 = Garage.create(name: "Exclusiv Garage", location: "Boston", price: 15, 
 garage3 = Garage.create(name: "Rusty Garage", location: "Detroit", price: 13, average_size: 13, description: "bad condition", capacity:25, user_id: 3)
 garage4 = Garage.create(name: "Skyscrapper Garage", location: "Chicago", price: 14, average_size: 12, description: "good condition", capacity:33, user_id: 4)
 garage5 = Garage.create(name: "Village Garage", location: "LA", price: 11, average_size: 11, description: "very good!!!!", capacity:7, user_id: 5)
+garage6 = Garage.create(name: "Old Garage", location: "Las Vegas", price: 25, average_size: 15, description: "very good!", capacity:15, user_id: 3)
+garage7 = Garage.create(name: "Garage", location: "NY", price: 22, average_size: 16, description: "very good!", capacity:15, user_id: 3)
+garage8 = Garage.create(name: "GarageNew", location: "LA", price: 25, average_size: 18, description: "very good!", capacity:17, user_id: 3)
 
 puts "Garages created"
 puts "Creatings parkingspaces..."
@@ -41,6 +44,12 @@ parkingspace2 = ParkingSpace.create(custom_size: 13, custom_price: 110, title: "
 parkingspace3 = ParkingSpace.create(custom_size: 7, custom_price: 10, title: "bikegarage", garage_id: 3)
 parkingspace4 = ParkingSpace.create(custom_size: 9, custom_price: 75, title: "motobike", garage_id: 4)
 parkingspace5 = ParkingSpace.create(custom_size: 8, custom_price: 80, title: "yacht", garage_id: 5)
+parkingspace6 = ParkingSpace.create(custom_size: 9, custom_price: 90, title: "BigSpace", garage_id: 6)
+parkingspace7 = ParkingSpace.create(custom_size: 10, custom_price: 90, title: "SmallOne", garage_id: 6)
+parkingspace8 = ParkingSpace.create(custom_size: 12, custom_price: 80, title: "FancyOne", garage_id: 6)
+parkingspace9 = ParkingSpace.create(custom_size: 10, custom_price: 77, title: "NewONe", garage_id: 6)
+parkingspace10 = ParkingSpace.create(custom_size: 7, custom_price: 79, title: "OldOne", garage_id: 6)
+
 
 puts "parkingspaces created"
 
@@ -51,6 +60,10 @@ client2 = Client.create(first_name: "Daniel", last_name: "Biren", phone_number: 
 client3 = Client.create(first_name: "Joe", last_name: "Koster", phone_number: "69387363" , email: "joekoster@gmail.com", company: "atomic", user_id: 3)
 client4 = Client.create(first_name: "Luc", last_name: "Welter", phone_number: "6453345" , email: "luc.welter@gmail.com", company: "k2", user_id: 4 )
 client5 = Client.create(first_name: "Robert", last_name: "Müller", phone_number: "1000000" , email: "roby.muller@ping.com", company: "bbc", user_id: 5)
+client6 = Client.create(first_name: "Tom", last_name: "Frankly", phone_number: "456760" , email: "codeworks@ping.com", company: "Codeworks", user_id: 3)
+client7 = Client.create(first_name: "Peter", last_name: "Pan", phone_number: "674335", email: "ironhack@info.com", company: "Ironhack", user_id: 3)
+client8 = Client.create(first_name: "Patito", last_name: "Hover", phone_number: "156744" , email: "lewagonn@info.com", company: "Lewagon", user_id: 3)
+client9 = Client.create(first_name: "Gerard", last_name: "Doe", phone_number: "464567" , email: "robert@ping.com", company: "Codewars", user_id: 3)
 
 puts "Clients created"
 
@@ -59,7 +72,11 @@ invoice1= Invoice.create(start_date: "01/01/2021", end_date: "01/01/2023",price:
 invoice2= Invoice.create(start_date: "01/03/2021", end_date: "01/05/2024",price: 11,payment_confirmed: 0, client_id: 2)
 invoice3= Invoice.create(start_date: "03/02/2022", end_date: "01/12/2022",price: 12,payment_confirmed: 1, client_id: 3)
 invoice4= Invoice.create(start_date: "09/07/2022", end_date: "01/03/2025",price: 12,payment_confirmed: 1, client_id: 4)
-invoice5= Invoice.create(start_date: "01/03/2023", end_date: "01/05/2027",price: 60,payment_confirmed: 1, client_id: 5)
+invoice5= Invoice.create(start_date: "01/03/2022", end_date: "01/05/2027",price: 60,payment_confirmed: 1, client_id: 5)
+invoice6= Invoice.create(start_date: "02/06/2022", end_date: "01/05/2027",price: 70,payment_confirmed: 1, client_id: 9)
+invoice7= Invoice.create(start_date: "07/05/2022", end_date: "08/06/2026",price: 65,payment_confirmed: 1, client_id: 8)
+invoice8= Invoice.create(start_date: "09/06/2022", end_date: "08/07/2026",price: 89,payment_confirmed: 1, client_id: 7)
+invoice9= Invoice.create(start_date: "09/03/2022", end_date: "08/06/2029",price: 90,payment_confirmed: 1, client_id: 6)
 
 puts "Invoices created"
 
@@ -70,5 +87,9 @@ invoice_space2 = InvoiceSpace.create(parking_space_id: 2, invoice_id: 3)
 invoice_space3 = InvoiceSpace.create(parking_space_id: 3, invoice_id: 2)
 invoice_space4 = InvoiceSpace.create(parking_space_id: 4, invoice_id: 4)
 invoice_space5 = InvoiceSpace.create(parking_space_id: 5, invoice_id: 5)
+invoice_space6 = InvoiceSpace.create(parking_space_id: 9, invoice_id: 9)
+invoice_space7 = InvoiceSpace.create(parking_space_id: 8, invoice_id: 8)
+invoice_space8 = InvoiceSpace.create(parking_space_id: 7, invoice_id: 7)
+invoice_space9 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 6)
 
 puts "Invoice_spaces created"
