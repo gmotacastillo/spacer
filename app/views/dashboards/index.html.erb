@@ -1,1 +1,48 @@
-<h1>your dashboard is empty</h1>
+
+<!---<%= Time.now.strftime("%m/%d/%Y") %>---->
+<div>
+  <h1>Welcome to your dashboard <%= @user.first_name %> !</h1>
+  <!---below div for garages infos--->
+  <div>
+    <h2>Number of garages: <%= @number_of_garages %> </h2>
+    <h2>Your garages:</h2>
+    <% @garages.each do |garage| %>
+        <%= garage.name %>
+        <%= garage.location %>
+    <% end %>
+  </div>
+  <!---below div for parking_spaces infos--->
+  <div>
+    <h2>Number of parkingspaces: <%= @number_of_parking_spaces %></h2>
+    <h2>Your parkingspaces:</h2>
+    <% @parking_spaces.each do |parkingspace| %>
+      <%= parkingspace.title %>
+    <% end %>
+  </div>
+  <!---below div for clients infos--->
+  <div>
+      <h2>Number of clients: <%= @number_of_clients %></h2>
+      <h2>Your clients:</h2>
+      <% @clients.each do |client| %>
+         <%= client.first_name %>
+      <% end %>
+  </div>
+   <!---below div for currently rented parkingspaces--->
+   <div>
+      <!---TOTAL INVOICES--->
+      <h2>Total invoices: <%= @number_of_invoices_total %></h2>
+       <!---AKTIV  INVOICES--->
+      <h2>Aktiv invoices: <%= @invoices_aktiv.count %></h2>
+      <% @invoices_aktiv.each do |invoice| %>
+        <p><%= invoice.start_date %></p>
+        <p><%= invoice.end_date %></p>
+        <p><%= invoice.price %></p>
+        <p><%= invoice.payment_confirmed %></p>
+      <% end %>
+   </div>
+   <!---below the total money made with the invoice----->
+   <div>
+     <h2>Total income: <%= @sum %>$</h2>
+
+   </div>
+</div>
