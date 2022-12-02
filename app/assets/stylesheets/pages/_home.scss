@@ -1,1 +1,85 @@
-// Specific CSS for your home-page
+.blue-bcg {
+    background-image: linear-gradient(to bottom, #00c6fb 0%, #005bea 100%);
+}
+
+.tab {
+    display: none;
+}
+
+.main-container {
+    background-color: white;
+    margin: 100px auto;
+    padding: 40px;
+    padding-top: 40px;
+    width: 60%;
+    min-width: 300px;
+    border-radius: 20px;
+  }
+
+  h1, p {
+    display: flex;
+    justify-content:center;
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    margin:0;
+  }
+
+  .last-h1 {
+    padding-bottom: 20px;
+  }
+
+  .overflow-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  .next-prev-btns {
+    background-color: #0089ff;
+    color:white;
+    box-shadow: rgba(99,99,99,0.35) 0px 2px 8p 0px;
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+    
+    
+  }
+
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #0089ff;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+
+  .step.active {
+    opacity: 1;
+  }
+  
+  .step.finish {
+    background-color: blue;
+  }
+
+  .redirectBtn {
+    background-color: #0089ff;
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+    
+  }
+
+  .redirectBtnLink {
+    text-decoration: none;
+    color:white;
+  }

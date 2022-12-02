@@ -1,2 +1,95 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="main-container">
+    <div class="tab tab-one">
+    <h1>Measure</h1>
+    <h1 class="last-h1">performance</h1>
+    <p>Keep track of your parking spots</p>
+    <p>performance in terms of</p>
+    <p>finance or occupancy.</p>
+    </div>
+
+    <div class="tab tab-two">
+    <h1>Payment</h1>
+    <h1 class="last-h1">control</h1>
+    <p>Easy monitor the status of payments,</p>
+    <p>generate invoices and always stay up-to-date.</p>
+    </div>
+
+    <div class="tab tab-three">
+    <h1>Manage your</h1>
+    <h1 class="last-h1"> parking spots</h1>
+    <p>Get started right away by giving your</p>
+    <p>parking spots a layout. Here, you can</p>
+    <p>easily view your current prospects.</p>
+    </div>
+
+    <div style="overflow:auto;" class="overflow-btn">
+      <div style="float:right;">
+            <button type="button" id="prevBtn" class="next-prev-btns">Previous</button>
+            <button type="button" id="nextBtn" class="next-prev-btns">Next</button>
+            <button type="button" class="redirectBtn d-none"><%= link_to "Start", new_user_session_path, class:"redirectBtnLink" %></button>
+            </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    </div>
+</div>
+
+
+<script>
+let currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+const nextBtn = document.getElementById("nextBtn")
+nextBtn.addEventListener("click", function(){nextPrev(1)} )
+const prevBtn = document.getElementById("prevBtn")
+prevBtn.addEventListener("click", function(){nextPrev(-1)} )
+
+// This function will display the specified tab of the form ...
+function showTab(n) {
+  const x = document.getElementsByClassName("tab");
+  console.log(n);
+  x[n].style.display = "block";
+
+
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } 
+//   else {
+//     document.getElementById("prevBtn").style.display = "inline";
+//   }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").style.display = "none";
+    document.querySelector(".redirectBtn").classList.remove("d-none")
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  
+  fixStepIndicator(n)
+}
+
+// This function will figure out which tab to display
+function nextPrev(n) {
+  const x = document.getElementsByClassName("tab");
+  console.log("clicked next", n)
+  
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  if (currentTab >= x.length) {
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  showTab(currentTab);
+}
+
+function fixStepIndicator(n) {
+  const x = document.getElementsByClassName("step");
+  console.log(x)
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  x[n].className += " active";
+}
+</script>
