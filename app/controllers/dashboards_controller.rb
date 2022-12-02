@@ -22,7 +22,6 @@ class DashboardsController < ApplicationController
     @all_invoices.each do |invoice|
     @sum += invoice.price
     end
-
     #users -> clients -> invoices(price)
     #@total_income=
   end
