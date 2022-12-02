@@ -1,0 +1,90 @@
+.main-container {
+  position: relative;
+  height: auto;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border-radius: 25px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  padding: 1rem;
+  background-color: white;
+  padding: 15px;
+}
+//upper part
+.upper-container-for-numbers {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    align-content: center;
+    padding: 15px;
+    margin-bottom: 10px;
+
+}
+
+.upper-container-items {
+  border-radius: 8px;
+  border-color: black;
+ // border: solid 1px black;
+  padding:10px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+}
+//for upper part
+.number {
+font-size: 25px;
+color: #287bff;
+}
+.text {
+font-size: 15px;
+color: rgb(109, 109, 109);
+}
+.text-welcome {
+  font-size: 35px;
+  color: rgb(109, 109, 109);
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
+.icon-dashboard {
+  font-size: 30px;
+  color: rgb(128, 128, 128);
+}
+
+.paid-text {
+  color: green;
+  font-size: 15px;
+}
+
+//bottom left
+.bottom-container-right {
+  border-radius: 8px;
+  margin: 15px;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  width: 500px;
+  height: 400px;
+
+}
+
+.bottom-container-left {
+  border-radius: 8px;
+  margin: 15px;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  width: 800px;
+  height: 400px;
+
+}
+
+
+
+
+.table td {
+  height: 60px;
+}
+
+// for tables
+.text {
+color: rgb(109, 109, 109) ;
+}
+.text-headers {
+  color: rgb(109, 109, 109) ;
+  font-weight: bold;
+}
