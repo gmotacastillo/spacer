@@ -1,8 +1,8 @@
 <div class="page-container">
-  <div class="filter-container">
-    <%= form_with url: garage_path(@garage), method: :get do |f| %>
-    <%= f.date_field :date, label: false %>
-    <%= f.submit %>
+  <div class="filter-container" data-controller="datetoggle">
+    <%= form_with url: garage_path(@garage), method: :get, html:{data:{datetoggle_target:"form"}} do |f| %>
+    <%= f.date_field :date, label: false, data:{format:"MMMM DD YYYY", datetoggle_target: "calendar", action:"change->datetoggle#formatDate", date:"", toggle: :submit}, value:(params[:date] ? params[:date] : Date.today) %>
+    <%= f.submit "", class: "d-none" %>
     <% end %>
   </div>
   <div class="status-container">
