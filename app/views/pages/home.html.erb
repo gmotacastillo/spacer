@@ -27,7 +27,7 @@
       <div style="float:right;">
             <button type="button" id="prevBtn" class="next-prev-btns">Previous</button>
             <button type="button" id="nextBtn" class="next-prev-btns">Next</button>
-            <button type="button" class="redirectBtn d-none"><%= link_to "Start", new_user_session_path, class:"redirectBtnLink" %></button>
+            <button type="button" class="redirectBtn d-none"><%= link_to "Start", dashboards_path, class:"redirectBtnLink" %></button>
             </div>
     </div>
 
@@ -56,7 +56,7 @@ function showTab(n) {
 
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
-  } 
+  }
 //   else {
 //     document.getElementById("prevBtn").style.display = "inline";
 //   }
@@ -66,7 +66,7 @@ function showTab(n) {
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-  
+
   fixStepIndicator(n)
 }
 
@@ -74,7 +74,7 @@ function showTab(n) {
 function nextPrev(n) {
   const x = document.getElementsByClassName("tab");
   console.log("clicked next", n)
-  
+
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
   if (currentTab >= x.length) {
