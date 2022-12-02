@@ -5,8 +5,8 @@
     </div>
     <div class="filter-container-invoice-right">
       <ul>
-        <li><i class="fa-solid fa-1"></i><p>Client info</p></li>
-        <li><i class="fa-solid fa-2"></i><p>Availability</p></li>
+        <li><i class="fa-solid fa-1 text-primary"></i><p class="text-primary">Client info</p></li>
+        <li><i class="fa-solid fa-2"></i><p data-newinvoice-target="changeBlue">Availability</p></li>
         <li><i class="fa-solid fa-3"></i><p>Invoice</p></li>
       </ul>
     </div>
@@ -30,28 +30,34 @@
               </div>
             </div>
         <% end %>
-        <button type="button" data-action="click->newinvoice#revealQuestionTwo" class="login-button"> Next </button>
+        <button type="button" data-action="click->newinvoice#revealQuestionTwo" class="btn btn-primary"> Next </button>
       </div>
       <div class="spots-to-rent">
-        <div data-newinvoice-target="questionTwo" data-controller="invoice">
-          <h4><strong>Which spots would you like to rent out?</strong></h4>
-          <h5>Select a lot</h5>
-          <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage"}%>
-          <h5>Booking period</h5>
-          <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } }  %>
-          <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
-          <div data-invoice-target="spaces">
-            <% ParkingSpace.all.each do |e| %>
-            <% e.garage.price = 20 %>
-            <div data-invoice-target="checkbox" style="display: none;" data-garageid=<%= e.garage.id%>>
-              <%= label_tag  "parking_space[]", e.id %>
-              <%= check_box_tag "parking_space[]", e.id, false, multiple: true, data: {action: "change->invoice#previewPrice", price: e.garage.price.to_i } %>
+        <div data-newinvoice-target="questionTwo" data-controller="invoice" class="">
+          <div class="invoice-left">
+            <h4><strong>Which spots would you like to rent out?</strong></h4>
+            <h5>Select a lot</h5>
+              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage"}%>
+            <h5>Booking period</h5>
+            <div class="invoice-client-container">
+              <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } }  %>
+              <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+            </div>
           </div>
-          <% end %>
-        </div>
-    </div>
-  <div>Total<span data-invoice-target="price"></span>€</div>
-    <%= i.submit %>
-  </div>
+          <div class="invoice-right">
+            <div data-invoice-target="spaces">
+              <% ParkingSpace.all.each do |e| %>
+              <% e.garage.price = 20 %>
+              <div data-invoice-target="checkbox" style="display: none;" data-garageid=<%= e.garage.id%>>
+                <%= label_tag  "parking_space[]", e.id %>
+                <%= check_box_tag "parking_space[]", e.id, false, multiple: true, data: {action: "change->invoice#previewPrice", price: e.garage.price.to_i } %>
+            </div>
+              <% end %>
+            </div>
+            <%# <div>Total<span data-invoice-target="price"></span>€</div> %>
+            <%= i.submit(class: "btn btn-primary") %>
+            </div>
+          </div>
+      </div>
   <% end %>
 </div>
