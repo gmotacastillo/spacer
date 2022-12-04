@@ -83,7 +83,11 @@ border-bottom-left-radius: 10px;
   border: none;
   color: white;
   width: 250px;
+  top: 1rem;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
+
 
 // this is the class for the input in application.html.erb
 .container-input-right-side {
@@ -136,7 +140,6 @@ pointer-events: none;
 }
 li:nth-child(6) {
   margin-bottom: 100px;
-  pointer-events: none;
   }
 }
 .navigation-dashboard-toggled ul li a {
@@ -154,11 +157,16 @@ li:nth-child(6) {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   }
-  .navigation-dashboard-toggled ul li a .icon {
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-  }
+
+.navigation-dashboard-toggled ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.navigation-dashboard-toggled ul .title {
+  opacity: 0;
+}
