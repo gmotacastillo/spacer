@@ -44,8 +44,8 @@ li:nth-child(1) {
 margin-bottom: 80px;
 pointer-events: none;
 }
-li:nth-child(6) {
-margin-bottom: 100px;
+li:nth-child(6){
+  margin-bottom: 15rem;
 }
 }
 .navigation-dashboard ul li a {
@@ -60,8 +60,8 @@ margin-bottom: 100px;
 .navigation-dashboard ul li:hover a {
 color: $blue;
 background-color: $white;
-border-top-left-radius: 10px;
-border-bottom-left-radius: 10px;
+border-top-left-radius: 25px;
+border-bottom-left-radius: 25px;
 }
 
 .navigation-dashboard ul li a .icon {
@@ -86,6 +86,60 @@ border-bottom-left-radius: 10px;
   top: 1rem;
   font-weight: bold;
   letter-spacing: 3px;
+}
+
+// curvy side
+
+.navigation-dashboard ul li:hover a::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px 35px 0 15px white;
+}
+
+.navigation-dashboard ul li:hover a::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px -35px 0 15px white;
+}
+
+.navigation-dashboard-toggled ul li:hover a::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px 35px 0 15px white;
+}
+
+.navigation-dashboard-toggled ul li:hover a::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px -35px 0 15px white;
 }
 
 
@@ -139,7 +193,7 @@ margin-bottom: 80px;
 pointer-events: none;
 }
 li:nth-child(6) {
-  margin-bottom: 100px;
+  margin-bottom: 15rem;
   }
 }
 .navigation-dashboard-toggled ul li a {
@@ -154,8 +208,8 @@ li:nth-child(6) {
 .navigation-dashboard-toggled ul li:hover a {
   color: $blue;
   background-color: $white;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   }
 
 .navigation-dashboard-toggled ul li a .icon {
