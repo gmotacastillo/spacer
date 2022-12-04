@@ -1,7 +1,7 @@
 <%#= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
 <div class="container-dashboard" >
-  <button data-toggle-target="button" class="icon" data-action="click->toggle#menu">spaceR</button>
+  <button data-toggle-target="button" class="icon" data-action="click->toggle#menu">spacr</button>
   <!--this is the big menu---->
   <div class="navigation-dashboard" data-toggle-target="menu">
     <ul>
@@ -20,40 +20,37 @@
       <li>
         <% if user_signed_in? && current_user.garages.empty? %>
           <%= link_to new_garage_path, data: {turbo_method: :get} do %>
-          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
-          <span class="title">Lot View</span>
+            <span class="icon"><i class="fa-sharp fa-solid fa-border-all"></i></span>
+            <span class="title">Lot View</span>
           <% end %>
           <% else %>
           <%= link_to garage_path(current_user.garages.last), data: {turbo_method: :get} do %>
-          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
-          <span class="title">Lot View</span>
+            <span class="icon"><i class="fa-sharp fa-solid fa-border-all"></i></span>
+            <span class="title">Lot View</span>
           <% end %>
         <% end %>
       </li>
       <li>
-          <%= link_to clients_path, data: {turbo_method: :get} do  %>
+        <%= link_to clients_path, data: {turbo_method: :get} do  %>
           <span class="icon"><i class="fa-solid fa-people-group"></i></span>
           <span class="title">My Clients</span>
-          <% end %>
+        <% end %>
       </li>
       <li>
-          <%= link_to new_invoice_path, data: {turbo_method: :get} do  %>
-          <span class="icon"><i class="fa-regular fa-file-invoice"></i></span>
+        <%= link_to new_invoice_path, data: {turbo_method: :get} do  %>
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
           <span class="title">Invoicing</span>
-          <% end %>
+        <% end %>
       </li>
-      <!---down here link to the settings....--->
-          <li>
-          <%= link_to edit_user_registration_path, data: {turbo_method: :get} do %>
+      <li>
+        <%= link_to edit_user_registration_path, data: {turbo_method: :get} do %>
           <span class="icon"><i class="fa-solid fa-gear"></i></span>
           <span class="title">Settings</span>
         <% end %>
       </li>
       <li>
-      <!---how to fix this link--->
-          <%# <%= current_user %>
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-          <span class="icon"><i class="fa-regular fa-arrow-right-from-bracket"></i></span>
+          <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
           <span class="title">Log Out</span>
         <% end %>
       </li>
@@ -84,12 +81,12 @@
       <li>
         <% if user_signed_in? && current_user.garages.empty? %>
           <%= link_to new_garage_path, data: {turbo_method: :get} do %>
-          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
+          <span class="icon"><i class="fa-sharp fa-solid fa-border-all"></i></span>
           <span class="title">Lot View</span>
           <% end %>
           <% else %>
           <%= link_to garage_path(current_user.garages.last), data: {turbo_method: :get} do %>
-          <span class="icon"><i class="fa-regular fa-table-cells"></i></span>
+          <span class="icon"><i class="fa-sharp fa-solid fa-border-all"></i></span>
           <span class="title">Lot View</span>
           <% end %>
         <% end %>
@@ -102,7 +99,7 @@
       </li>
       <li>
         <%= link_to new_invoice_path, data: {turbo_method: :get} do  %>
-          <span class="icon"><i class="fa-regular fa-file-invoice"></i></span>
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
           <!---span class="title">Invoicing</span--->
         <% end %>
       </li>
@@ -114,7 +111,7 @@
       </li>
       <li>
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-          <span class="icon"><i class="fa-regular fa-arrow-right-from-bracket"></i></span>
+          <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
           <!---span class="title">Log Out</span--->
         <% end %>
       </li>
