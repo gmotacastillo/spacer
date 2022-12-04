@@ -4,7 +4,7 @@
   margin-right: 2rem;
   margin-left: 2rem;
   border-radius: 25px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   padding: 1rem;
   background-color: white;
 }
@@ -21,11 +21,11 @@
 }
 
 .upper-container-items {
-  border-radius: 8px;
+  border-radius: 15px;
   border-color: black;
  // border: solid 1px black;
   padding:10px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
 }
 //for upper part
 .number {
@@ -48,23 +48,27 @@ color: rgb(109, 109, 109);
   font-size: 15px;
 }
 
+.upper-container-items i{
+  opacity: 0.5;
+}
+
 //bottom left
 .bottom-container-right {
-  border-radius: 8px;
+  border-radius: 15px;
   margin: 15px;
   padding: 20px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   width: 500px;
   height: auto;
 
 }
 
 .bottom-container-left {
-  border-radius: 8px;
+  border-radius: 15px;
   margin: 15px;
   padding: 20px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
-  width: 800px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+  min-width: 60%;
   height: auto;
 }
 
@@ -83,14 +87,13 @@ color: rgb(0, 0, 0) ;
 }
 
 .chart{
-  border-radius: 8px;
+  border-radius: 15px;
   margin: 15px;
   padding: 20px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
-  width: 800px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+  width: auto;
   height: auto;
 }
-
 
 
 // hover stuff

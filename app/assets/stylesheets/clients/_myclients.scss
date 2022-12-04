@@ -38,6 +38,7 @@ th{
   padding-right: 4.5rem;
 }
 
-tr{
-  padding: 1rem;
+.client-info{
+  display: flex;
+  flex-direction: column;
 }
