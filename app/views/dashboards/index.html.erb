@@ -50,9 +50,10 @@
       </table>
     </div>
 
+<%# in case we want to most recent customers to dashboard view %>
 
     <!---->
-    <div class="bottom-container-right">
+    <%# <div class="bottom-container-right">
       <h3 class="number">Recent clients</h3>
       <table class="table">
         <thead>
@@ -63,14 +64,22 @@
         </thead>
         <tbody>
           <% @clients.each do |client| %>
-            <tr>
-            <td class="text"><%= "#{client.first_name} #{client.last_name}" %></td>
-            <td class="text"><%= client.company %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <%# <tr> %>
+            <%# <td class="text"><%= "#{client.first_name} #{client.last_name}"</td> %>
+            <%# <td class="text"><%= client.company</td> %>
+            <%# </tr> %>
+          <%# <% end %>
+        <%# </tbody> %>
+      <%# </table> %>
+    <%# </div> %>
+
+    <div class="chart">
+      <%= line_chart Client.group_by_day(:created_at).count %>
     </div>
+
+    <%# <div class="chart">
+      <%= pie_chart Client.group(:company).count %>
+    <%# </div> %>
   </div>
 </div>
 
