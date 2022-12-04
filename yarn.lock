@@ -405,6 +405,8 @@ __metadata:
     "@hotwired/turbo-rails": ^7.2.4
     "@popperjs/core": ^2.11.6
     bootstrap: ^5.2.3
+    chart.js: ^4.0.1
+    chartkick: ^4.2.0
     flatpickr: ^4.6.13
     moment: ^2.29.4
     stimulus-dropdown: ^2.0.0
@@ -447,6 +449,40 @@ __metadata:
   version: 1.0.30001435
   resolution: "caniuse-lite@npm:1.0.30001435"
   checksum: ec88b9c37f66095e26ddb8b43110e9564ebccb6de77e495b8e8b9d64fdbfe37f7762be8fd2578c3ecc181a183a159578c9bd8e9b90eb15b44b78e8a6d0e92530
+  languageName: node
+  linkType: hard
+
+"chart.js@npm:>=3.0.2, chart.js@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "chart.js@npm:4.0.1"
+  checksum: 013dabf3cd4ad2d71574e1d616906ae6f5b3f5914efb7f8ac7407bfe9b621e997f30966350bbdf31e3a1322c8c602715ef4dd6d0b6072590bb48db03861ac401
+  languageName: node
+  linkType: hard
+
+"chartjs-adapter-date-fns@npm:>=2.0.0":
+  version: 2.0.1
+  resolution: "chartjs-adapter-date-fns@npm:2.0.1"
+  peerDependencies:
+    chart.js: ">=2.8.0"
+  checksum: e13fd5357e963ee0b5fc51dd491015df12ff6df286770bdca54bd5481fb6f2d7712b37f5b5638a0fa2058e3551d6bfbb5daa8b73cab3fd8ccf3e684a8a12369e
+  languageName: node
+  linkType: hard
+
+"chartkick@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "chartkick@npm:4.2.0"
+  dependencies:
+    chart.js: ">=3.0.2"
+    chartjs-adapter-date-fns: ">=2.0.0"
+    date-fns: ">=2.0.0"
+  dependenciesMeta:
+    chart.js:
+      optional: true
+    chartjs-adapter-date-fns:
+      optional: true
+    date-fns:
+      optional: true
+  checksum: 0446725e4cd42c6059f26c8d0dd316105c94efc4e687663450d2a91116fb11c612ccfc67cb2b9d07874e1efe7a534762367a1c39fb7c2fcb9cefd27b1ea3c656
   languageName: node
   linkType: hard
 
@@ -497,6 +533,13 @@ __metadata:
     shebang-command: ^2.0.0
     which: ^2.0.1
   checksum: 671cc7c7288c3a8406f3c69a3ae2fc85555c04169e9d611def9a675635472614f1c0ed0ef80955d5b6d4e724f6ced67f0ad1bb006c2ea643488fcfef994d7f52
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:>=2.0.0":
+  version: 2.29.3
+  resolution: "date-fns@npm:2.29.3"
+  checksum: e01cf5b62af04e05dfff921bb9c9933310ed0e1ae9a81eb8653452e64dc841acf7f6e01e1a5ae5644d0337e9a7f936175fd2cb6819dc122fdd9c5e86c56be484
   languageName: node
   linkType: hard
 
