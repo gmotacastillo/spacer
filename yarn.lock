@@ -111,6 +111,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shopify/draggable@npm:^1.0.0-beta.8":
+  version: 1.0.0-beta.12
+  resolution: "@shopify/draggable@npm:1.0.0-beta.12"
+  checksum: 4641ab8a3ad7402342d4e6ee02c3c5a8c4fdaf89a029efb21518d47e522d51809b7f226e4e18bb657e0be55476bdc1cc96048b0cc79e427aeb1e87dc01b6c958
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -404,6 +411,7 @@ __metadata:
     "@hotwired/stimulus-webpack-helpers": ^1.0.1
     "@hotwired/turbo-rails": ^7.2.4
     "@popperjs/core": ^2.11.6
+    "@shopify/draggable": ^1.0.0-beta.8
     bootstrap: ^5.2.3
     chart.js: ^4.0.1
     chartkick: ^4.2.0

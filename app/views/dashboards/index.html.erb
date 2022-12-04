@@ -11,13 +11,13 @@
       <p class="number"> <%= @number_of_garages %>&nbsp  <i class="fa-solid fa-house icon-dashboard"></i></p><p class="text">Number of garages</p>
     </div>
     <div class="upper-container-items">
-     <p class="number"><%= @number_of_parking_spaces %>&nbsp  <i class="fa-solid fa-clone icon-dashboard"></i></p><p class="text">Number of parkingspaces</p>
+      <p class="number"><%= @number_of_parking_spaces %>&nbsp  <i class="fa-solid fa-clone icon-dashboard"></i></p><p class="text">Number of parking spaces</p>
     </div>
     <div class="upper-container-items">
-       <p class="number"><%= @number_of_clients %>&nbsp  <i class="fa-solid fa-people-group icon-dashboard"></i></p><p class="text">Number of clients</p>
+      <p class="number"><%= @number_of_clients %>&nbsp  <i class="fa-solid fa-people-group icon-dashboard"></i></p><p class="text">Number of clients</p>
     </div>
     <div class="upper-container-items">
-      <p class="number"><%= @invoices_aktiv.count %>&nbsp  <i class="fa-solid fa-file-invoice icon-dashboard"></i></p><p class="text">Activ invoices</p>
+      <p class="number"><%= @invoices_aktiv.count %>&nbsp  <i class="fa-solid fa-file-invoice icon-dashboard"></i></p><p class="text">Active invoices</p>
     </div>
   </div>
 
@@ -74,7 +74,7 @@
     <%# </div> %>
 
     <div class="chart">
-      <%= line_chart Client.group_by_day(:created_at).count %>
+      <%= line_chart Client.group_by_day(:created_at).count, label:"# of customers", xtitle:"Date", ytitle:"# of customers", width: "auto", height: "200px", colors: ["#b00", "#666"], round: 2 %>
     </div>
 
     <%# <div class="chart">

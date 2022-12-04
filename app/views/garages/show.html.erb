@@ -28,7 +28,7 @@
     <div class="grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
       <% @parking_spaces.each do |space|%>
         <% date = params[:date] ? Date.parse(params[:date]) : Date.today %>
-        <div class="parking-spaces <%= space.unavailable?(date) ? "red" : "green" %>">
+        <div class="parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
           <div class="grid-title">
             <div class="space-id"><%= space.id %></div>
             <div class="link-client-id">

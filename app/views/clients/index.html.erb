@@ -23,43 +23,48 @@
   </header>
 
   <table class="projects-table">
-  <thead>
-    <tr class="header-info">
-      <th>Contact name</th>
-      <th>Company</th>
-      <th># of rented spots</th>
-      <th>Total income</th>
-      <th>Status</th>
-      <th class="text-right">View details</th>
-    </tr>
-  </thead>
-  <tr>
-    <% @clients.each do |client| %>
-    <td>
-      <p class="item-info"><%= client.first_name %></p>
-    </td>
-    <td>
-      <p class="item-info"><%= client.company %></p>
-    </td>
-    <td class="member">
-      <%# <%= client.invoices %>
-    </td>
-    <td>
-      <p class="item-info">$4,670</p>
-    </td>
-    <td class="status">
-      <span class="status-text status-orange">In progress</span>
-    </td>
-    <td>
-      <form class="form" action="#" method="POST">
-      <select class="action-box">
-        <option>Actions</option>
-        <option>Start project</option>
-        <option>Send for QA</option>
-        <option>Send invoice</option>
-      </select>
-      </form>
-    </td>
-    <% end %>
-  </tr>
+    <thead>
+      <tr class="header-info">
+        <th>Contact name</th>
+        <th>Company</th>
+        <th># of rented spots</th>
+        <th>Total income</th>
+        <th>Status</th>
+        <th class="text-right">View details</th>
+      </tr>
+    </thead>
+    <div class="tr-container">
+      <tr>
+          <% @clients.each do |client| %>
+            <div class="client-info">
+              <td>
+                <p class="item-info"><%= client.first_name %></p>
+              </td>
+              <td>
+                <p class="item-info"><%= client.company %></p>
+              </td>
+              <td class="member">
+                <%# <%= client.invoices %>
+              </td>
+              <td>
+                <p class="item-info">$4,670</p>
+              </td>
+              <td class="status">
+                <span class="status-text status-orange">In progress</span>
+              </td>
+              <td>
+                <form class="form" action="#" method="POST">
+                <select class="action-box">
+                  <option>Actions</option>
+                  <option>Start project</option>
+                  <option>Send for QA</option>
+                  <option>Send invoice</option>
+                </select>
+                </form>
+              </td>
+            </div>
+          <% end %>
+      </tr>
+    </div>
+  </table>
 </div>

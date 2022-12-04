@@ -9,7 +9,7 @@ body{
   margin-right: 2rem;
   margin-left: 2rem;
   border-radius: 25px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   padding: 1rem;
   background-color: white;
   .grid-holder{
@@ -31,7 +31,7 @@ body{
       gap: 5px;
       width: max-content;
       .parking-spaces{
-        box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
+        box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
         border-radius: 10px;
         padding: 1rem;
         min-height: 8rem;
@@ -41,10 +41,11 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 1rem;
       }
       .parking-spaces:hover{
-        box-shadow: rgba(99, 99, 99, 0.356) 0px 2px 8px 0px;
-        transform: scale(1.1, 1.1);
+        box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 5px 0px;
+        transform: scale(1.05, 1.05);
       }
     }
   }
