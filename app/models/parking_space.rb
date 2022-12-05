@@ -4,7 +4,7 @@ class ParkingSpace < ApplicationRecord
   has_many :invoices, through: :invoice_spaces, dependent: :destroy
 
   def unavailable?(date)
-    self.invoices.any? {|invoice| invoice.start_date < date && invoice.end_date > date }
+    self.invoices.any? {|invoice| invoice.start_date <= date && invoice.end_date >= date }
   end
 
 end
