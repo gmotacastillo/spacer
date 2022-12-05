@@ -12,25 +12,39 @@ body{
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   padding: 1rem;
   background-color: white;
-  .grid-holder{
+  .show-grid-holder{
     overflow-y: scroll;
     height: 68vh;
-    .grid{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow:  -5px -5px 10px #d2d2d2,
+                5px 5px 10px #ffffff;
+    border-radius: 25px;
+    padding-top: 1rem;
+    .show-grid{
       display: grid;
       place-items: center;
       grid-template-columns: repeat(6, auto);
-      gap: 10px 50px;
+      grid-gap: 10px;
       /*  grid-column-gap: 50px; -> column-gap  */
       margin-right: 2rem;
       margin-bottom: 2rem;
       margin-left: 2rem;
-      display: grid;
       grid-auto-flow: row;
-      background-color: white;
       margin: 0 auto;
-      gap: 5px;
-      width: max-content;
-      .parking-spaces{
+      height: 100%;
+      // gap: 5px;
+      .show-parking-spaces{
+        // box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+        // border-radius: 10px;
+        // display: flex;
+        // padding: 1rem;
+        // gap: 0.5rem;
+        // height: 100px;
+        // width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
         box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
         border-radius: 10px;
         padding: 1rem;
@@ -38,12 +52,8 @@ body{
         max-height: 10rem;
         min-width: 8rem;
         max-width: 10rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1rem;
       }
-      .parking-spaces:hover{
+      .show-parking-spaces:hover{
         box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 5px 0px;
         transform: scale(1.05, 1.05);
       }
@@ -52,34 +62,58 @@ body{
 }
 
 
-.status-container{
+.show-status-container{
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+  // align-items: center;
+  // margin: 1rem;
+  // width: auto;
+  // border-radius: 25px;
+  // background: #e0e0e0;
+  // box-shadow:  -5px -5px 10px #bebebe,
+  //             5px 5px 10px #ffffff;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 1rem;
-  width: auto;
+  align-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0 !important;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 18px 0px;
+  height: 3rem;
+  border-radius: 25px;
+}
+
+.show-status-navbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-right: 2rem;
+}
+
+.show-status-navbar{
+  margin-bottom: 0;
 }
 
 
-.status-container a:visited, a{
+.show-status-container a:visited, a{
   text-decoration: none;
   color: black;
 }
 
-.status-container ul.status-navbar{
-
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: auto;
+.show-status-container ul.show-status-navbar{
   list-style-type: none;
 }
 
-.status-container li{
-  padding-right: 3rem;
-  padding-left: 3rem;
+.show-status-container i{
+  padding-right: 1rem;
+  padding-left: 0;
 }
 
 select{
@@ -113,7 +147,9 @@ ul button{
 }
 
 // date formatting below
-.filter-container{
+
+
+.show-filter-container{
 
   // input[type="date"]::-webkit-datetime-edit-text,
   // input[type="date"]::-webkit-datetime-edit-month-field,
@@ -122,9 +158,15 @@ ul button{
   // display: none;
   // }
 
+  form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   input {
     position: relative;
-    width: 300px; height: 2rem;
+    width: 300px; height: 3rem;
     color: white;
     border: 1px;
     outline: none;
@@ -134,8 +176,10 @@ ul button{
   input[type="date"]::-webkit-inner-spin-button,
   input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
-    width: 200px;
-    opacity: none;
+    width: 300px;
+    position: absolute;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
   input:before {
@@ -143,9 +187,9 @@ ul button{
     position: absolute;
     content: attr(data-date);
     display: inline-block;
-    color: rgb(0, 106, 255);
+    color: #0089FF;
     padding-bottom: 1rem;
-    font-size: 20px;
+    font-size: 2em;
     font-weight: bolder;
     text-align: center;
   }
@@ -161,4 +205,12 @@ ul button{
     color: black;
     opacity: 0;
   }
+}
+
+.dropdown-btn{
+  background: #0089FF;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  width: 5rem;
 }

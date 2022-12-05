@@ -1,15 +1,15 @@
 <div class="page-container">
-  <div class="filter-container" data-controller="datetoggle">
+  <div class="show-filter-container" data-controller="datetoggle">
     <%= form_with url: garage_path(@garage), method: :get, html:{data:{datetoggle_target:"form"}} do |f| %>
     <%= f.date_field :date, label: false, data:{format:"MMMM DD YYYY", datetoggle_target: "calendar", action:"change->datetoggle#formatDate", date:"", toggle: :submit}, value:(params[:date] ? params[:date] : Date.today) %>
     <%= f.submit "", class: "d-none" %>
     <% end %>
   </div>
-  <div class="status-container">
-    <ul class="status-navbar">
+  <div class="show-status-container">
+    <ul class="show-status-navbar">
       <div class="dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Garages
+        <a class="dropdown-btn" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          My lots
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <% @garages.each do |garage| %>
@@ -24,12 +24,12 @@
       <%= link_to "", garages_path, class:"fa-sharp fa-solid fa-gear" %>
     </ul>
   </div>
-  <div class="grid-holder">
-    <div class="grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
+  <div class="show-grid-holder">
+    <div class="show-grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
       <% @parking_spaces.each do |space|%>
         <% date = params[:date] ? Date.parse(params[:date]) : Date.today %>
-        <div class="parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
-          <div class="grid-title">
+        <div class="show-parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
+          <div class="show-grid-title">
             <div class="space-id"><%= space.id %></div>
             <div class="link-client-id">
               <%= link_to "view details", clients_path %>
