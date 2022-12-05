@@ -1,3 +1,9 @@
+.invoice-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .filter-container-invoice {
   display: flex;
   flex-direction: row;
@@ -44,4 +50,30 @@
   display: flex;
   flex-direction: column;
   box-sizing: content-box;
+}
+
+.booking-details-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 80px;
+}
+
+.booking-details-container p {
+  justify-content: flex-start;
+}
+
+.details-row-container {
+  padding-bottom: 20px;
+}
+
+.testtest {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.line-3 {
+  border-top: 1px solid black;
+  padding-top: 15px;
 }
