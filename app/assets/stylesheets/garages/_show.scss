@@ -17,12 +17,14 @@ body{
     height: 68vh;
     display: flex;
     flex-wrap: wrap;
-    border-radius: 28px;
+    border-radius: 15px;
     background: #ffffff;
     box-shadow:  -5px -5px 10px #d2d2d2,
                 5px 5px 10px #ffffff;
     border-radius: 25px;
     padding-top: 1rem;
+    justify-content: center;
+
     .show-grid{
       display: grid;
       place-items: center;
@@ -37,14 +39,8 @@ body{
       height: 100%;
       // gap: 5px;
       .show-parking-spaces{
-        // box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
-        // border-radius: 10px;
-        // display: flex;
-        // padding: 1rem;
-        // gap: 0.5rem;
-        // height: 100px;
-        // width: 100%;
-        background-color: rgba(255, 255, 255, 0.8);
+
+        // DO NOT ADD A BACKGROUND COLOR HERE BECAUSE IT MESSES UP THE CONDITIONAL CSS CLASS GREEN OR RED (AVAILABILITY)
         box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
         border-radius: 10px;
         padding: 1rem;
@@ -54,7 +50,7 @@ body{
         max-width: 10rem;
       }
       .show-parking-spaces:hover{
-        box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 5px 0px;
+        box-shadow: rgba(0, 140, 255, 0.356) 0px 0px 15px 0px;
         transform: scale(1.05, 1.05);
       }
     }
@@ -84,7 +80,7 @@ body{
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 18px 0px;
   height: 3rem;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .show-status-navbar{
@@ -133,7 +129,7 @@ ul button{
 }
 
 .space-id{
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bolder;
   font-size: 20px;
 }
@@ -207,10 +203,8 @@ ul button{
   }
 }
 
-.dropdown-btn{
-  background: #0089FF;
-  padding: 0.5rem;
-  border-radius: 5px;
-  color: white;
-  width: 5rem;
+.dropdown-btn {
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
 }

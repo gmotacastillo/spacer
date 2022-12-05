@@ -9,7 +9,8 @@
     <ul class="show-status-navbar">
       <div class="dropdown">
         <a class="dropdown-btn" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          My lots
+          <%# My lots ▼ %>
+          <%= @garage.location %> <i class="fa-solid fa-bars"></i>
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <% @garages.each do |garage| %>
@@ -31,6 +32,7 @@
         <div class="show-parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
           <div class="show-grid-title">
             <div class="space-id"><%= space.id %></div>
+            <div class="create-new"></div>
             <div class="link-client-id">
               <%= link_to "view details", clients_path %>
             </div>
