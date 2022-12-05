@@ -3,6 +3,7 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
+    @garage = Garage.find(id= @invoice.parking_spaces.ids.sample)
   end
 
   def new
