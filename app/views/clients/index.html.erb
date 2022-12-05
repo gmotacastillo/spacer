@@ -1,7 +1,8 @@
-<%# <div>
-  <h1>My Clients</h1>
+<% require "date" %>
+ <div>
+
   <div>
-    <% if @clients.blank? %>
+    <% #if @clients.blank? %>
       <%# <p>No clients created.</p> %>
     <%# <% else %>
       <%# <% @clients.each do |client| %>
@@ -13,16 +14,55 @@
 <%# </div> %>
 
 <div class="main-clients-container">
+
   <header class="clients-header">
-    <h1 class="clients-title">My clients</h1>
+    <h1 class="number">My clients</h1>
     <div class="title">Active Clients</div>
     <div class="count">|
       <%= @clients.count %>
     </div>
     <i class="zmdi zmdi-download"></i>
   </header>
+<!---@number_of_invoices_total = current_user.invoices.count
+    @invoices_aktiv = current_user.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}-->
 
-  <table class="projects-table">
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+        <th class="text-headers">Name</th>
+        <th class="text-headers">Company</th>
+        <th class="text-headers">Units rented</th>
+        <th class="text-headers">Status</th>
+
+        <th class="text-headers">Infos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td class="text"><%= "#{client.first_name} #{client.last_name}" %></td>
+            <td class="text"><%= client.company %></td>
+            <td class="text"><%= client.invoices.count %></td>
+            <% client_activ_invoices = client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}%>
+            <% if client_activ_invoices.count > 0 %>
+              <td class="text-status-activ">Activ</td>
+              <% else %>
+              <td class="text-status-inactiv">Inactiv</td>
+            <% end %>
+            <td>
+              <%= link_to  client_path(client) do %>
+                <p class="icon-table-info"><i class="fa-solid fa-circle-info"></i></p>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <!---table-->
+  <!---table class="projects-table">
     <thead>
       <tr class="header-info">
         <th>Contact name</th>
@@ -67,4 +107,4 @@
       </tr>
     </div>
   </table>
-</div>
+</div----->

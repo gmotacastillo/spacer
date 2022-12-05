@@ -55,7 +55,7 @@ puts "parkingspaces created"
 
 puts "Creatings clients.."
 
-client1 = Client.create!(first_name: "Bob", last_name: "Schmit", phone_number: "691115147" , email: "bob.schmit@gmail.com", company: "nordica", user_id: 1)
+client1 = Client.create(first_name: "Bob", last_name: "Schmit", phone_number: "691115147" , email: "bob.schmit@gmail.com", company: "nordica", user_id: 1)
 client2 = Client.create(first_name: "Daniel", last_name: "Biren", phone_number: "6912345147" , email: "daniel.biren@gmail.com", company: "scarpa", user_id: 2)
 client3 = Client.create(first_name: "Joe", last_name: "Koster", phone_number: "69387363" , email: "joekoster@gmail.com", company: "atomic", user_id: 3)
 client4 = Client.create(first_name: "Luc", last_name: "Welter", phone_number: "6453345" , email: "luc.welter@gmail.com", company: "k2", user_id: 4 )
@@ -74,9 +74,12 @@ invoice3= Invoice.create(start_date: "03/02/2022", end_date: "01/12/2022",price:
 invoice4= Invoice.create(start_date: "09/07/2022", end_date: "01/03/2025",price: 12,payment_confirmed: 1, client_id: 4)
 invoice5= Invoice.create(start_date: "01/03/2022", end_date: "01/05/2027",price: 60,payment_confirmed: 1, client_id: 5)
 invoice6= Invoice.create(start_date: "02/06/2022", end_date: "01/05/2027",price: 70,payment_confirmed: 1, client_id: 9)
-invoice7= Invoice.create(start_date: "07/05/2022", end_date: "08/06/2026",price: 65,payment_confirmed: 1, client_id: 8)
+invoice7= Invoice.create(start_date: "07/05/2023", end_date: "08/06/2026",price: 65,payment_confirmed: 1, client_id: 8)
 invoice8= Invoice.create(start_date: "09/06/2022", end_date: "08/07/2026",price: 89,payment_confirmed: 1, client_id: 7)
 invoice9= Invoice.create(start_date: "09/03/2022", end_date: "08/06/2029",price: 90,payment_confirmed: 1, client_id: 6)
+
+invoice10= Invoice.create(start_date: "15/03/2022", end_date: "08/06/2027",price: 72,payment_confirmed: 1, client_id: 3)
+invoice11= Invoice.create(start_date: "17/06/2022", end_date: "08/06/2026",price: 80,payment_confirmed: 1, client_id: 3)
 
 puts "Invoices created"
 
@@ -91,5 +94,8 @@ invoice_space6 = InvoiceSpace.create(parking_space_id: 9, invoice_id: 9)
 invoice_space7 = InvoiceSpace.create(parking_space_id: 8, invoice_id: 8)
 invoice_space8 = InvoiceSpace.create(parking_space_id: 7, invoice_id: 7)
 invoice_space9 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 6)
+
+invoice_space10 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 10)
+invoice_space11 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 11)
 
 puts "Invoice_spaces created"

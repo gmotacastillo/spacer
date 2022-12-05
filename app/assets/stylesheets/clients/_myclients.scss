@@ -42,3 +42,14 @@ th{
   display: flex;
   flex-direction: column;
 }
+
+// mathis-monday-changes:
+.text-status-activ {
+color: green;
+}
+.text-status-inactiv {
+color: red;
+}
+.icon-table-info {
+  color: $blue;
+}

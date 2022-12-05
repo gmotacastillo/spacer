@@ -80,3 +80,5 @@ gem "devise"
 gem "flatpickr"
 gem 'groupdate', '~> 6.1'
 gem "chartkick", "~> 4.2"
+#for the search function in my clients
+gem "pg_search"
