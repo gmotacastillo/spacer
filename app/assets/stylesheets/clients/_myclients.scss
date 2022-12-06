@@ -42,3 +42,55 @@ th{
   display: flex;
   flex-direction: column;
 }
+
+// mathis-monday-changes:
+.text-status-activ {
+color: green;
+}
+.text-status-inactiv {
+color: red;
+}
+.icon-table-info {
+  color: $blue;
+}
+// for the search bar
+.container-search-clients {
+
+}
+
+.text-activ {
+  color: green;
+}
+.text-past {
+  color: red;
+}
+.text-future {
+  color: orange;
+}
+
+// buttons
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight: normal;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, $blue 5%, #79bbff 100%);
+	background-color:$blue;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
