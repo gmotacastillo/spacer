@@ -31,7 +31,7 @@ class GaragesController < ApplicationController
     @garage = Garage.find(params[:id])
   end
 
-  def updated
+  def update
     @garage = Garage.find(params[:id])
     @garage.update(garage_params)
     redirect_to garage_path(@garage)
