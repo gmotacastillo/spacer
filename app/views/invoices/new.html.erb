@@ -14,15 +14,15 @@
     <%= simple_form_for [@invoice], data:{turbo: false} do |i| %>
     <div data-controller="newinvoice">
       <div  data-newinvoice-target="questionOne">
-        <%= i.input :client, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first %>
+        <%= i.input :client_id, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first, selected: @client.id, include_blank: true %>
         <%= i.simple_fields_for :clients do |client| %>
             <div class="invoice-client-container">
               <div>
-                <%= client.input :company %>
+                <%= client.input :company, placeholder: @client.company %>
                 <%= client.input :first_name %>
               </div>
               <div>
-                <%= client.input :last_name %>
+                <%= client.input :last_name, placeholder: @client.last_name %>
                 <%= client.input :phone_number %>
               </div>
               <div>

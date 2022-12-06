@@ -9,14 +9,17 @@ class InvoicesController < ApplicationController
   def new
     @invoice = Invoice.new
     @garages = current_user.garages
+    @client = Client.new
+    @client = Client.find(params[:client_id]) if params[:client_id].present?
   end
 
   def create
     @invoice = Invoice.new(invoice_params)
 
     #setting client
-    if params[:client_id].present?
-      @client = Client.find(params[:client_id])
+
+    if params[:invoice][:client_id].present?
+      @client = Client.find(params[:invoice][:client_id])
     else
       name = params[:invoice][:clients][:first_name]
       last_name = params[:invoice][:clients][:last_name]
@@ -41,6 +44,13 @@ class InvoicesController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @invoice = Invoice.find(params[:id])
+    @invoice.destroy
+    redirect_to client_path(params[:client_id]), status: :see_other
+  end
+
 
   private
 
