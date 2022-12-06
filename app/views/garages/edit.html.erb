@@ -1,0 +1,12 @@
+<div>
+  <h1>Edit the parking space</h1>
+  <div>
+    <%= simple_form_for [@garage] do |f|%>
+      <%= f.input :name %>
+      <%= f.input :location %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.submit "Edit", class:"btn btn-primary edit-button" %>
+    <% end %>
+  </div>
+</div>
