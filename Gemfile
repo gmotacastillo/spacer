@@ -80,3 +80,5 @@ gem "devise"
 gem "flatpickr"
 gem 'groupdate', '~> 6.1'
 gem "chartkick", "~> 4.2"
+
+gem "stripe", "~> 8.0"

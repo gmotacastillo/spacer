@@ -6,13 +6,19 @@ export default class extends Controller {
 
   connect() {
     this.questionOneTarget.hidden = false;
-    this.questionTwoTarget.hidden = true
+    this.questionTwoTarget.hidden = true;
+    console.log(getDates());
   }
 
   revealQuestionTwo() {
     console.log("hello")
     this.questionOneTarget.hidden = true;
     this.questionTwoTarget.hidden = false;
+  }
+
+  getDates (change) {
+    const dates = document.querySelector("#invoice_start_date")
+    return dates
   }
 
 }
