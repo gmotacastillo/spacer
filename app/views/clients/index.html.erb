@@ -23,10 +23,17 @@
     </div>
     <i class="zmdi zmdi-download"></i>
   </header>
-<!---@number_of_invoices_total = current_user.invoices.count
-    @invoices_aktiv = current_user.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}-->
 
   <div>
+    <!--search function form---->
+    <div class="container-search-clients">
+    <%= form_with url: "/clients", method: :get do |form| %>
+      <%= form.text_field :q %>
+      <%= form.submit "Search", class: "btn btn-success" %>
+    <% end %>
+    <%= link_to "Refresh", clients_path, request.params.merge(q: nil) %>
+    </div>
+    <!--end search function---->
     <table class="table">
       <thead>
         <tr>

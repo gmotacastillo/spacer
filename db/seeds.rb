@@ -80,6 +80,7 @@ invoice9= Invoice.create(start_date: "09/03/2022", end_date: "08/06/2029",price:
 
 invoice10= Invoice.create(start_date: "15/03/2022", end_date: "08/06/2027",price: 72,payment_confirmed: 1, client_id: 3)
 invoice11= Invoice.create(start_date: "17/06/2022", end_date: "08/06/2026",price: 80,payment_confirmed: 1, client_id: 3)
+invoice12= Invoice.create(start_date: "16/05/2024", end_date: "13/07/2029",price: 90,payment_confirmed: 1, client_id: 3)
 
 puts "Invoices created"
 
@@ -97,5 +98,6 @@ invoice_space9 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 6)
 
 invoice_space10 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 10)
 invoice_space11 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 11)
+invoice_space12 = InvoiceSpace.create(parking_space_id: 6, invoice_id: 12)
 
 puts "Invoice_spaces created"

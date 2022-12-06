@@ -2,7 +2,7 @@ require "date"
 class ClientsController < ApplicationController
   def index
     @clients = Client.where(user: current_user)
-
+    @clients = @clients.search_by_last_name_first_name_company(params[:q]) if params[:q].present?
   end
 
   def show
@@ -34,7 +34,7 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @client = client.find(params[:id])
+    @client = Client.find(params[:id])
     @client.destroy
     redirect_to clients_path, status: :see_other
   end
