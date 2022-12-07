@@ -5,21 +5,25 @@ export default class extends Controller {
   static targets = ["gridElement", "invoiceBtn"]
 
   connect() {
-      // this.gridElementTargets.forEach(e => {
-      //   console.log(e);
-      //  })
-      console.log("testing13")
+      console.log("testing16")
 
       this.gridElementTargets.forEach(e => {if (e.classList.contains("red")) {
         // while (e.firstChild){
-          e.innerHTML = ""
+          console.log(e.dataset.lastname);
+          const lastname = e.dataset.lastname
+          const counter = e.dataset.counter
+          const email = e.dataset.email
+          const endDate = e.dataset.enddate
+
+          e.innerHTML = `<div class="show-grid-title">
+          <div class="space-id"> # ${counter}</div>
+          <div>
+            <a href="#">${lastname}</a>
+            <p>${email}</p>
+            <p>${endDate}</p>
+            </div>
+          </div>`
         // }
       }})
-
-      // if (this.gridElementTarget.classList.conatins("green")) {
-      //   while (this.gridElementTarget.firstChild){
-      //     this.gridElementTarget.innerHTML = ""
-      //   }
-      // }
     }
   }
