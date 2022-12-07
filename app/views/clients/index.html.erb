@@ -24,31 +24,34 @@
     <i class="zmdi zmdi-download"></i>
   </header>
 
-  <div>
+  <div class="container-search-clients">
     <!--search function form---->
-    <div class="container-search-clients">
+    <div class="item-search">
       <%= form_with url: "/clients", method: :get do |form| %>
-          <%= form.text_field :q %>
+          <%= form.text_field :q, placeholder: "Name or Company"%>
           <%= form.submit "Search", class: "myButton" %>
-        <% end %>
-        <%= link_to "Refresh", request.params.merge(q: nil), class: "myButton" %>
-      <!---% end %-->
+      <% end %>
     </div>
+    <div class="item-search">
+      <%= link_to "Refresh", request.params.merge(q: nil), class: "myButton" %>
+    </div>
+  </div>
     <!--end search function---->
+  <div class="container-client-table">
     <table class="table">
       <thead>
         <tr>
-        <th class="text-headers">Name</th>
-        <th class="text-headers">Company</th>
-        <th class="text-headers">Units rented</th>
-        <th class="text-headers">Status</th>
+          <th class="text-headers">Name</th>
+          <th class="text-headers">Company</th>
+          <th class="text-headers">Units rented</th>
+          <th class="text-headers">Status</th>
 
-        <th class="text-headers">Infos</th>
+          <th class="text-headers"></th>
         </tr>
       </thead>
       <tbody>
         <% @clients.each do |client| %>
-          <tr>
+          <tr class="text">
             <td class="text"><%= "#{client.first_name} #{client.last_name}" %></td>
             <td class="text"><%= client.company %></td>
             <td class="text"><%= client.invoices.count %></td>
