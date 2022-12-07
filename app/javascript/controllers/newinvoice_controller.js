@@ -38,3 +38,4 @@ export default class extends Controller {
     this.newClientFormTarget.hidden = false;
     }
   }
+}
