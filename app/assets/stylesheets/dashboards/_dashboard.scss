@@ -59,8 +59,7 @@ color: rgb(109, 109, 109);
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   width: 500px;
-  height: auto;
-
+  height: 28rem;
 }
 
 .bottom-container-left {
@@ -69,7 +68,8 @@ color: rgb(109, 109, 109);
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   min-width: 60%;
-  height: auto;
+  height: 28rem;
+  overflow-y: scroll;
 }
 
 .table td {
