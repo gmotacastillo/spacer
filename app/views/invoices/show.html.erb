@@ -1,4 +1,4 @@
-<div class="main-page-container">
+<div class="page-container">
 
   <div class="filter-container-invoice">
       <div class="filter-container-invoice-left">
@@ -6,8 +6,8 @@
       </div>
       <div class="filter-container-invoice-right">
         <ul>
-          <li><i class="fa-solid fa-1"></i><p>Client info</p></li>
-          <li><i class="fa-solid fa-2"></i><p>Availability</p></li>
+          <li><i class="fa-solid fa-1 text-primary"></i><p class="text-primary">Client info</p></li>
+          <li><i class="fa-solid fa-2 text-primary"></i><p class="text-primary">Availability</p></li>
           <li><i class="fa-solid fa-3 text-primary"></i><p class="text-primary">Invoice</p></li>
         </ul>
       </div>
@@ -21,6 +21,8 @@
     <h4><strong>Company: </strong><%= @invoice.client.company %></h4>
     <h4><strong>Phone: </strong><%= @invoice.client.phone_number %></h4>
     <h4><strong>Email: </strong><%= @invoice.client.email %></h4>
+
+    <a class="btn btn-primary" href="<%= @invoice.payment_url %>" role="button">Payment link</a>
   </div>
 
 
@@ -31,9 +33,9 @@
       <p>From: <%= @invoice.start_date %></p>
       <p>To: <%= @invoice.end_date %></p>
       <p>Number of days: <%= (@invoice.end_date - @invoice.start_date).to_i + 1 %></p>
-      
+
     </div>
-    
+
     <div class="details-row-container">
       <h3><strong>Parking spaces rented:</strong></h3>
       <% @invoice.parking_spaces.each do |space| %>

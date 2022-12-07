@@ -13,4 +13,15 @@ module GridHelper
       "1fr 1fr 1fr 1fr 1fr 1fr 1fr"
     end
   end
+
+  def set_columns_invoice(parking_spaces)
+    case parking_spaces
+    when 0..1
+      "1fr"
+    when 1..2
+      "1fr 1fr"
+    else
+      "1fr 1fr 1fr 1fr"
+    end
+  end
 end

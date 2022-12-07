@@ -40,16 +40,28 @@
   gap: 4rem;
 }
 
-.invoice-left {
-  display: flex;
-  flex-direction: column;
+.grey {
+  background-color: #F6F6F6;
+  border-radius: 8px;
   padding: 4px;
+  border: 1px solid #E5E5E5;
 }
 
 .invoice-right {
-  display: flex;
-  flex-direction: column;
-  box-sizing: content-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.spaces-right {
+  background-color: #F6F6F6;
+  border-radius: 16px;
+  padding: 4px;
+  overflow-y: scroll;
+  height: 20rem
+}
+
+.total-price {
+  padding-top: 1rem;
 }
 
 .booking-details-container{
@@ -85,6 +97,10 @@
 .line-3 {
   border-top: 1px solid black;
   padding-top: 15px;
+}
+
+.spaces-left {
+  height: 20rem
 }
 
 .dash-main-container-3 {
