@@ -22,5 +22,8 @@ application.register("newinvoice", NewinvoiceController)
 import NewlotController from "./newlot_controller"
 application.register("newlot", NewlotController)
 
+import QuickinvoiceController from "./quickinvoice_controller"
+application.register("quickinvoice", QuickinvoiceController)
+
 import ToggleController from "./toggle_controller"
 application.register("toggle", ToggleController)

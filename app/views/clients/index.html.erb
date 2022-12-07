@@ -31,7 +31,7 @@
           <%= form.text_field :q %>
           <%= form.submit "Search", class: "myButton" %>
         <% end %>
-        <%= link_to "Refresh", clients_path, request.params.merge(q: nil) %>
+        <%= link_to "Refresh", request.params.merge(q: nil), class: "myButton" %>
       <!---% end %-->
     </div>
     <!--end search function---->

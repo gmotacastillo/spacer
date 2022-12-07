@@ -3,7 +3,7 @@
     <div class="filter-container-invoice-left">
       <h1>Generate invoice</h1>
     </div>
-    <div class="filter-container-invoice-right">
+    <div class="filter-container-invoice-right" >
       <ul>
         <li><i class="fa-solid fa-1 text-primary"></i><p class="text-primary">Client info</p></li>
         <li><i class="fa-solid fa-2" data-newinvoice-target="changeBlue"></i><p data-newinvoice-target="changeBlueAlso">Availability</p></li>
@@ -11,12 +11,14 @@
       </ul>
     </div>
   </div>
+  <div data-controller="newinvoice" >
     <%= simple_form_for [@invoice], data:{turbo: false} do |i| %>
     <div>
       <div  data-newinvoice-target="questionOne newClientForm" >
         <%= i.input :client_id, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first, selected: @client.id, include_blank: true, data: {action: "change->newinvoice#showNewClientForm"} %>
+
         <%= i.simple_fields_for :clients do |client| %>
-            <div class="invoice-client-container">
+            <div class="invoice-client-container" data-newinvoice-target="newClientForm">
               <div>
                 <%= client.input :company, placeholder: @client.company %>
                 <%= client.input :first_name %>
@@ -63,5 +65,6 @@
           </div>
         </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

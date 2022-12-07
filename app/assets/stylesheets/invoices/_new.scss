@@ -69,6 +69,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 80px;
+  padding-top: 25px;
 }
 
 .booking-details-container p {
@@ -76,7 +77,15 @@
 }
 
 .details-row-container {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 20px;
+}
+
+.details-row-container-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .testtest {
@@ -92,4 +101,16 @@
 
 .spaces-left {
   height: 20rem
+}
+
+.dash-main-container-3 {
+  position: relative;
+    height: 100vh;
+    width: 250vh;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    border-radius: 25px;
+    box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+    padding: 1rem;
+    background-color: white;
 }

@@ -9,8 +9,7 @@
     <ul class="show-status-navbar">
       <div class="dropdown">
         <a class="dropdown-btn" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          <%# My lots ▼ %>
-          <%= @garage.location %> <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-square-parking"></i><%= @garage.location %>&nbsp &nbsp<i class="fa-solid fa-bars"></i>
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <% @garages.each do |garage| %>
@@ -25,19 +24,20 @@
       <%= link_to "", edit_garage_path, class:"fa-sharp fa-solid fa-gear" %>
     </ul>
   </div>
-  <div class="show-grid-holder">
+  <div class="show-grid-holder" data-controller="quickinvoice">
     <div class="show-grid", style="grid-template-columns: <%= set_columns(@parking_spaces.count)%>">
+      <% counter = 1 %>
       <% @parking_spaces.each do |space|%>
         <% date = params[:date] ? Date.parse(params[:date]) : Date.today %>
-        <div class="show-parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
+        <div data-quickinvoice-target="gridElement" class="show-parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
           <div class="show-grid-title">
-            <div class="space-id"><%= space.id %></div>
-            <div class="create-new"></div>
-            <div class="link-client-id">
-              <%= link_to "view details", clients_path %>
+            <div class="space-id"> # <%= counter %></div>
+            <div class="quickinvoice-btn" data-quickinvoice-target="invoiceBtn">
+              <%= link_to "", new_invoice_path, class:"fa-solid fa-plus" %>
             </div>
           </div>
         </div>
+        <% counter += 1 %>
       <% end %>
     </div>
   </div>
