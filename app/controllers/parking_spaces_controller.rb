@@ -2,6 +2,12 @@ class ParkingSpacesController < ApplicationController
   before_action :set_garage, only: %i[new create]
   def index
     @garages = Garage.where("user_id = ?", current_user.id)
+    @parking_spaces = ParkingSpace.first(5)
+    @parking_spaces = ParkingSpace.where(garage_id: params[:garage_id]) if params[:garage_id]
+    @parking_spaces = @parking_spaces.select { |parking_spot| !parking_spot.invoices.any? { |invoice| invoice.end_date > Date.parse(params[:start_date]) && invoice.start_date <= Date.parse(params[:end_date])}} if params[:start_date]
+    respond_to do |format|
+      format.text { render partial: 'parking_spaces', formats: [:html] }
+    end
   end
 
   def show

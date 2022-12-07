@@ -13,8 +13,8 @@
   </div>
     <%= simple_form_for [@invoice], data:{turbo: false} do |i| %>
     <div data-controller="newinvoice">
-      <div  data-newinvoice-target="questionOne">
-        <%= i.input :client_id, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first, selected: @client.id, include_blank: true %>
+      <div  data-newinvoice-target="questionOne newClientForm" >
+        <%= i.input :client_id, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first, selected: @client.id, include_blank: true, data: {action: "change->newinvoice#showNewClientForm"} %>
         <%= i.simple_fields_for :clients do |client| %>
             <div class="invoice-client-container">
               <div>
@@ -33,29 +33,23 @@
         <button type="button" data-action="click->newinvoice#revealQuestionTwo" class="btn btn-primary"> Next </button>
       </div>
       <div class="spots-to-rent">
-        <div data-newinvoice-target="questionTwo" data-controller="invoice" class="">
+        <div data-newinvoice-target="questionTwo" data-controller="invoice">
           <div class="invoice-left .col-md-8">
             <h4><strong>Which spots would you like to rent out?</strong></h4>
             <br>
             <h5>Select a lot</h5>
-              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage"}%>
+              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage", invoice_target:"garage"}%>
             <br>
             <h5>Booking period</h5>
             <div class="invoice-client-container">
-              <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } }  %>
+              <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr", action:"change->invoice#filterDates", invoice_target:"startDate" } }  %>
               <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
             </div>
           </div>
           <div class="invoice-right .col-md-4">
             <div data-invoice-target="spaces">
-              <% ParkingSpace.all.each do |e| %>
-              <% e.garage.price %>
-              <div data-invoice-target="checkbox" style="display: none;" data-garageid=<%= e.garage.id%>>
-                <h4></h4>
-                <%= label_tag  "parking_space[]", e.id %>
-                <%= check_box_tag "parking_space[]", e.id, false, multiple: true, data: {action: "change->invoice#previewPrice", price: e.garage.price.to_i } %>
+
             </div>
-              <% end %>
             </div>
             <br>
             <div>

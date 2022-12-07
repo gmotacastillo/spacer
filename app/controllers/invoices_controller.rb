@@ -3,13 +3,18 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
-    @garage = Garage.find(id= @invoice.parking_spaces.ids.sample)
+    @garage = @invoice.parking_spaces.first.garage
+    if @garage.name.nil?
+      @garage.update(name:"#{current_user.first_name}'s garage")
+    end
+    # @garage = Garage.find(@invoice.parking_spaces.ids.sample)
   end
 
   def new
     @invoice = Invoice.new
     @garages = current_user.garages
     @client = Client.new
+    #if you access from the client_show page to the invoices#new
     @client = Client.find(params[:client_id]) if params[:client_id].present?
   end
 
@@ -39,6 +44,8 @@ class InvoicesController < ApplicationController
       number_of_days = (@invoice.end_date - @invoice.start_date).to_i + 1
       total = parking_spaces.map{ |e| (e.garage.price * number_of_days) if e.garage.price.present? }.sum
       @invoice.update(price: total)
+      # creating stripe order
+      create_stripe_order(@invoice)
       redirect_to invoice_path(@invoice)
     else
       render :new
@@ -66,4 +73,11 @@ class InvoicesController < ApplicationController
   # def client_params
   #   params.require(:invoice).require(:clients).permit(:first_name, :last_name, :phone_number, :email, :company)
   # end
+
+  def create_stripe_order(invoice)
+    product = Stripe::Product.create({name:invoice.id})
+    price = Stripe::Price.create({currency:"EUR", unit_amount: (invoice.price * 100).to_i, product: product})
+    link = Stripe::PaymentLink.create({ line_items: [{ price: price.id, quantity: 1 }, ], })
+    @invoice.update(payment_url: link.url)
+  end
 end

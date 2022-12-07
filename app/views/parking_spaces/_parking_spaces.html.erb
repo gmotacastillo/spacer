@@ -1,0 +1,6 @@
+<% @parking_spaces.each do |parking_spot| %>
+  <div data-invoice-target="checkbox" data-garageid=<%= parking_spot.garage.id%> >
+    <%= label_tag  "parking_space[]", parking_spot.id %>
+    <%= check_box_tag "parking_space[]", parking_spot.id, false, multiple: true, data: {action: "change->invoice#previewPrice", price: parking_spot.garage.price.to_i } %>
+  </div>
+<% end %>
