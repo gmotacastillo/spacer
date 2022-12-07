@@ -1,12 +1,13 @@
 <div class="main-lot-container">
   <div class="filter-container">
-    <h1>< November 28, 2022 ></h1>
+    <h1> November 28, 2022 </h1>
   </div>
+  <br>
   <div class="status-container2">
     <ul>
-      <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>occupied</li>
-      <li><i class="fa-solid fa-circle" style="color: #70D159"></i>available</li>
-      <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>soon available</li>
+      <li><i class="fa-solid fa-circle" style="color: #FF6565"></i>  occupied</li>
+      <li><i class="fa-solid fa-circle" style="color: #70D159"></i>  available</li>
+      <li><i class="fa-solid fa-circle" style="color: #FFC400"></i>  soon available</li>
     </ul>
   </div>
   <section class="grid-container">
@@ -40,21 +41,21 @@
             <br>
             <%= f.input :location, placeholder:"Please provide a city ...", label: false%>
             <br>
-            <button type="button" data-action="click->newlot#revealQuestionTwo"> Next </button>
+            <button class="form-btn", type="button" data-action="click->newlot#revealQuestionTwo"> Next </button>
           </div>
           <div class="price-question" data-newlot-target="questionTwo">
             <h4>Let's create your lot view ...</h4>
             <h2>How much does a parking space cost?</h2>
             <br>
-            <%= f.input :price, placeholder:"$", label: false%>
+            <%= f.input :price, placeholder:"$", label: false %>
             <br>
-            <button type="button" data-action="click->newlot#revealQuestionThree"> Next </button>
+            <button class="form-btn" type="button" data-action="click->newlot#revealQuestionThree"> Next </button>
           </div>
           <div class="parking-spots" data-newlot-target="questionThree">
             <h3>How many parking spots do you have?</h3>
             <%= f.input :capacity, placeholder:"e.g.: 45", label: false %>
             <br>
-            <%= f.submit "Create" %>
+            <%= f.submit "Create", class:"form-btn" %>
           </div>
         </div>
   <% end %>
