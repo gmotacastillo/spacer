@@ -14,6 +14,7 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.new
     @garages = current_user.garages
     @client = Client.new
+    #if you access from the client_show page to the invoices#new
     @client = Client.find(params[:client_id]) if params[:client_id].present?
   end
 
