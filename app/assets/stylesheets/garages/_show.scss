@@ -12,50 +12,50 @@ body{
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   padding: 1rem;
   background-color: white;
-  .show-grid-holder{
-    overflow-y: scroll;
-    height: 68vh;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 15px;
-    background: #ffffff;
-    box-shadow:  -5px -5px 10px #d2d2d2,
-                5px 5px 10px #ffffff;
-    border-radius: 25px;
-    padding-top: 1rem;
-    justify-content: center;
+}
 
-    .show-grid{
-      display: grid;
-      place-items: center;
-      grid-template-columns: repeat(6, auto);
-      grid-gap: 10px;
-      /*  grid-column-gap: 50px; -> column-gap  */
-      margin-right: 2rem;
-      margin-bottom: 2rem;
-      margin-left: 2rem;
-      grid-auto-flow: row;
-      margin: 0 auto;
-      height: 100%;
-      // gap: 5px;
-      .show-parking-spaces{
+.show-grid-holder {
+  overflow-y: scroll;
+  height: 68vh;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow:  -5px -5px 10px #d2d2d2,
+              5px 5px 10px #ffffff;
+  border-radius: 25px;
+  padding-top: 1rem;
+  justify-content: center;
+}
+  .show-grid{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 10px;
+    /*  grid-column-gap: 50px; -> column-gap  */
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    grid-auto-flow: row;
+    margin: 0 auto;
+    height: 100%;
+    // gap: 5px;
+    .show-parking-spaces{
 
-        // DO NOT ADD A BACKGROUND COLOR HERE BECAUSE IT MESSES UP THE CONDITIONAL CSS CLASS GREEN OR RED (AVAILABILITY)
-        box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
-        border-radius: 10px;
-        padding: 1rem;
-        min-height: 8rem;
-        max-height: 10rem;
-        min-width: 8rem;
-        max-width: 10rem;
-      }
-      .show-parking-spaces:hover{
-        box-shadow: rgba(0, 140, 255, 0.356) 0px 0px 15px 0px;
-        transform: scale(1.05, 1.05);
-      }
+      // DO NOT ADD A BACKGROUND COLOR HERE BECAUSE IT MESSES UP THE CONDITIONAL CSS CLASS GREEN OR RED (AVAILABILITY)
+      box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+      border-radius: 10px;
+      padding: 1rem;
+      min-height: 8rem;
+      max-height: 10rem;
+      min-width: 8rem;
+      max-width: 10rem;
+    }
+    .show-parking-spaces:hover{
+      box-shadow: rgba(0, 140, 255, 0.356) 0px 0px 15px 0px;
+      transform: scale(1.05, 1.05);
     }
   }
-}
 
 
 .show-status-container{

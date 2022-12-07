@@ -14,9 +14,19 @@ export default class extends Controller {
 
   previewPrice(event){
     const parking_spot = event.currentTarget
+    const range = this.startDateTarget.value.replaceAll(/\s/g,'').split("to")
+    const start = new Date(range[0]).getDate()
+    let end = start
+    if(range[1]){
+     end = new Date(range[1]).getDate()
+    }
+    const duration = (end - start)
     const parking_price = Number(parking_spot.dataset.price)
-    console.log(typeof Number(parking_spot.dataset.price));
-    total = total + parking_price
+    if(event.currentTarget.checked){
+      total = total + (parking_price * duration)
+    }else{
+      total = total - (parking_price * duration)
+    }
     this.priceTarget.innerHTML = total
     return total
   }

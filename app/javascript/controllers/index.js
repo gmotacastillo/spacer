@@ -10,9 +10,6 @@ application.register("datetoggle", DatetoggleController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
-import FormController from "./form_controller"
-application.register("form", FormController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
