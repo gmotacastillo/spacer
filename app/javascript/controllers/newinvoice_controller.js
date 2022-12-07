@@ -2,8 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="newinvoice"
 export default class extends Controller {
-  static targets = ["questionOne", "questionTwo","newClientForm"]
+  static targets = ["questionOne", "questionTwo","newClientForm", "inputForm"]
 
+  initialize() {
+    if (this.inputFormTarget.value > 1) {
+    this.newClientFormTarget.hidden = true
+    } else {
+    this.newClientFormTarget.hidden = false
+    }
+  }
   connect() {
     console.log("newInvoiceController connected")
     console.log(this.newClientFormTarget)
@@ -17,8 +24,12 @@ export default class extends Controller {
     this.questionTwoTarget.hidden = false;
   }
 
-  showNewClientForm() {
-  console.log("reacting to select bar")
-
-   }
+  showNewClientFormInvoice() {
+    console.log(this.inputFormTarget.value)
+    if (this.inputFormTarget.value > 1) {
+    this.newClientFormTarget.hidden = true;
+    } else {
+    this.newClientFormTarget.hidden = false;
+    }
+  }
   }
