@@ -15,6 +15,7 @@
 
   <div class="invoice-page-container">
 
+  <div class="dash-main-container-3">
   <div class="client-info-container">
     <h4><strong>Client: </strong><%= @invoice.client.first_name+" "+@invoice.client.last_name%></h4>
     <h4><strong>Company: </strong><%= @invoice.client.company %></h4>
@@ -47,12 +48,11 @@
     </div>
 
     <div class="line-3"></div>
-
-    <div class="details-row-container">
+    </div>
+    
+    <div class="details-row-container-price">
       <h3><strong class="price-container">Total price: <%= @invoice.price %> €</strong></h3>
     </div>
-
   </div>
-
   </div>
 </div>
