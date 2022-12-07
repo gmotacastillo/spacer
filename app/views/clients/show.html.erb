@@ -6,28 +6,28 @@
 
   <div class="container-client-info"> <!---This div contains the general infos about client--->
     <div class="item-client-table">
-      <table class="text">
+      <table class="text-infos-client">
         <tr>
-          <th><p>Company:</p></th>
-          <td><p><%= @client.company %></p></td>
+          <th><p class="text-infos-client">Company:</p></th>
+          <td><p class="text-infos-client"><%= @client.company %></p></td>
         </tr>
         <tr>
-          <th><p>Phone:</p></th>
-          <td><p><%= @client.phone_number %></p></td>
+          <th><p class="text-infos-client">Phone:</p></th>
+          <td><p class="text-infos-client"><%= @client.phone_number %></p></td>
         </tr>
         <tr>
-          <th><p>Email:</p></th>
-          <td><p><%= @client.email %></p></td>
+          <th><p class="text-infos-client">Email:</p></th>
+          <td><p class="text-infos-client"><%= @client.email %></p></td>
         </tr>
         <tr>
-          <th><p>Client-id:</p></th>
-          <td><p><%= @client.id%></p></td>
+          <th><p class="text-infos-client">Client-id:</p></th>
+          <td><p class="text-infos-client"><%= @client.id%></p></td>
         </tr>
       </table>
     </div>
     <div class="client-info-buttons">
-      <p><%= link_to "Edit",clients_path, class: "myButton"%></p>
-      <p><%= link_to "Contact",clients_path, class: "myButton"%></p>
+      <p><%= link_to "Edit", edit_client_path(@client), class: "myButton"%></p>
+      <p><%= link_to "Contact", edit_client_path(@client), class: "myButton"%></p>
     </div>
   </div>
 
@@ -78,9 +78,12 @@
   </div>
 
   <div class="buttons-container-client"> <!---This div contains the action buttons--->
-    <div class="new-invoice-butt"></div>
-    <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "myButton"%></p>
-    <p><%= link_to "Back to clients", clients_path, class: "myButton" %></p>
+    <div class="new-invoice-button">
+      <p><%= link_to "Back to clients", clients_path, class: "myButton" %></p>
+    </div>
+    <div class="back-button">
+      <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "myButton"%></p>
+    </div>
     <p><%#= link_to "Delete client"%></p>
   </div>
 </div>

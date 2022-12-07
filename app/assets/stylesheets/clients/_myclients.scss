@@ -120,30 +120,45 @@ justify-content: flex-end;
   border-radius: 15px;
   border-color: black;
   padding:1px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+  // box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
 }
 
 .client-info-buttons {
   border-radius: 15px;
   border-color: black;
   padding:1px;
-  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+  //box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1em;
-
-
-
 }
 
 
 .buttons-container-client {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.back-button {
+
+}
+.new-invoice-button {
 
 }
 
 .text-infos-client {
   font-size: 18px;
   color: #273142;
+  font-weight: normal;
+}
+.text-infos-client-blue {
+  font-size: 18px;
+  color: #273142;
+  font-weight: normal;
+  color: $blue;
+
+
 }
