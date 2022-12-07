@@ -10,9 +10,6 @@ application.register("datetoggle", DatetoggleController)
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
-import FormController from "./form_controller"
-application.register("form", FormController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -24,6 +21,9 @@ application.register("newinvoice", NewinvoiceController)
 
 import NewlotController from "./newlot_controller"
 application.register("newlot", NewlotController)
+
+import QuickinvoiceController from "./quickinvoice_controller"
+application.register("quickinvoice", QuickinvoiceController)
 
 import ToggleController from "./toggle_controller"
 application.register("toggle", ToggleController)
