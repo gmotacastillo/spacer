@@ -1,28 +1,38 @@
 <div class="main-clients-container">
-  <div> <!---This div contains the clients name--->
-    <p><%= "#{@client.first_name} #{@client.last_name}" %></p>
+   <header class="clients-header">
+      <h1 class="number"><%= "#{@client.first_name} #{@client.last_name}"%></h1>
+      <i class="zmdi zmdi-download"></i>
+  </header>
+
+  <div class="container-client-info"> <!---This div contains the general infos about client--->
+    <div class="item-client-table">
+      <table class="text">
+        <tr>
+          <th><p>Company:</p></th>
+          <td><p><%= @client.company %></p></td>
+        </tr>
+        <tr>
+          <th><p>Phone:</p></th>
+          <td><p><%= @client.phone_number %></p></td>
+        </tr>
+        <tr>
+          <th><p>Email:</p></th>
+          <td><p><%= @client.email %></p></td>
+        </tr>
+        <tr>
+          <th><p>Client-id:</p></th>
+          <td><p><%= @client.id%></p></td>
+        </tr>
+      </table>
+    </div>
+    <div class="client-info-buttons">
+      <p><%= link_to "Edit",clients_path, class: "myButton"%></p>
+      <p><%= link_to "Contact",clients_path, class: "myButton"%></p>
+    </div>
   </div>
-  <div class="d-flex"> <!---This div contains the general infos about client--->
-    <div class="p-2">
-      <p>Name:<%= "#{@client.first_name} #{@client.last_name}"  %></p>
-    </div>
-    <div class="p-2"
-      <p>Company:<%= @client.company %></p>
-    </div>
-    <div class="p-2"
-      <p>Phone:<%= @client.phone_number %></p>
-    </div>
-    <div class="p-2"
-      <p>Email:<%= @client.email %></p>
-    </div>
-    <div class="p-2"
-      <p>Client-ID: <%= @client.id %></p>
-    </div>
-    <p><%= link_to "Edit client",clients_path, class: "myButton"%></p>
-    <p><%= link_to "Contact",clients_path, class: "myButton"%></p>
-  </div>
+
+
   <div> <!---This div contains the activ invoices--->
-    <p>All invoices</p>
     <table class="table sortable">
         <thead>
           <tr>
@@ -67,7 +77,8 @@
       </table>
   </div>
 
-  <div> <!---This div contains the action buttons--->
+  <div class="buttons-container-client"> <!---This div contains the action buttons--->
+    <div class="new-invoice-butt"></div>
     <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "myButton"%></p>
     <p><%= link_to "Back to clients", clients_path, class: "myButton" %></p>
     <p><%#= link_to "Delete client"%></p>

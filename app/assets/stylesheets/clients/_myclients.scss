@@ -15,6 +15,7 @@ div.main-clients-container{
   overflow-y: scroll;
   overflow-x: hidden;
   flex-direction: row;
+  gap: 50px;
 }
 
 .clients-header{
@@ -57,6 +58,10 @@ color: red;
 }
 // for the search bar
 .container-search-clients {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+
 
 
 
@@ -97,4 +102,48 @@ color: red;
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.table-text {
+  font-size: 25px;
+}
+
+// showpage of client
+.container-client-info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.item-client-table {
+  border-radius: 15px;
+  border-color: black;
+  padding:1px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+}
+
+.client-info-buttons {
+  border-radius: 15px;
+  border-color: black;
+  padding:1px;
+  box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+
+
+
+}
+
+
+.buttons-container-client {
+  display: flex;
+
+}
+
+.text-infos-client {
+  font-size: 18px;
+  color: #273142;
 }
