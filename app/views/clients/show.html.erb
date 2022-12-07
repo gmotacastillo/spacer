@@ -36,10 +36,11 @@
           </tr>
         </thead>
         <tbody>
-          <% current_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
-          <% future_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
-          <% past_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
-          <% @client.invoices.each do |invoice| %>
+          <%# current_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
+          <%# future_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
+          <%# past_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
+
+          <% @client.invoices.order("end_date DESC, start_date").each do |invoice| %>
             <tr>
               <td class="text"><%= invoice.id%></td>
               <td class="text"><%= invoice.start_date %></td>
