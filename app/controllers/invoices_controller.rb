@@ -3,8 +3,11 @@ class InvoicesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
-
-    @garage = Garage.find(@invoice.parking_spaces.ids.sample)
+    @garage = @invoice.parking_spaces.first.garage
+    if @garage.name.nil?
+      @garage.update(name:"#{current_user.first_name}'s garage")
+    end
+    # @garage = Garage.find(@invoice.parking_spaces.ids.sample)
   end
 
   def new

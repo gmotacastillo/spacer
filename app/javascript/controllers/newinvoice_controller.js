@@ -9,7 +9,6 @@ export default class extends Controller {
     console.log(this.newClientFormTarget)
     this.questionOneTarget.hidden = false;
     this.questionTwoTarget.hidden = true;
-    console.log(getDates());
   }
 
   revealQuestionTwo() {
@@ -22,4 +21,4 @@ export default class extends Controller {
   console.log("reacting to select bar")
 
    }
-   }
+  }
