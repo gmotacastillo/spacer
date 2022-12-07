@@ -40,7 +40,7 @@
             <br>
             <h5><strong>Select a lot</strong></h5>
             <br>
-              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage", invoice_target:"garage"}%>
+              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location, selected: params[:garage_id]), data:{action: "change->invoice#filterGarage", invoice_target:"garage"}%>
             <br>
             <br>
             <h5><strong>Booking period</strong></h5>
@@ -49,14 +49,12 @@
               <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr", action:"change->invoice#filterDates", invoice_target:"startDate" } }  %>
               <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
             </div>
-          </div>
           <div>
             <%= i.submit(class: "btn btn-primary") %>
-          </div>
+           </div>
           </div>
           <div class="col-6 invoice-right">
             <div data-invoice-target="spaces"class="spaces-right">
-
             </div>
             <div class="total-price flex-end">
               <h5>Total<span data-invoice-target="price"></span>€</h5>
