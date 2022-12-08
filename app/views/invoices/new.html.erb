@@ -5,13 +5,13 @@
     </div>
     <div class="filter-container-invoice-right" >
       <ul>
-        <li><i class="fa-solid fa-1 text-primary"></i><p class="text-primary">Client info</p></li>
-        <li><i class="fa-solid fa-2" data-newinvoice-target="changeBlue"></i><p data-newinvoice-target="changeBlueAlso">Availability</p></li>
-        <li><i class="fa-solid fa-3"></i><p>Invoice</p></li>
+        <li><p class="circle-number">1</p><p class="text-primary">Client info</p></li>
+        <li><p data-newinvoice-target="changeBlue">2</p><p data-newinvoice-target="changeBlueAlso">Availability</p></li>
+        <li><p>3</p><p>Invoice</p></li>
       </ul>
     </div>
   </div>
-  <div data-controller="newinvoice">
+  <div>
     <%= simple_form_for [@invoice], data:{turbo: false} do |i| %>
     <div>
       <div data-newinvoice-target="questionOne" >
@@ -38,32 +38,34 @@
           <div class="col-6 invoice-left">
             <h4><strong>Which spots would you like to rent out?</strong></h4>
             <br>
-            <h5><strong>Select a lot</strong></h5>
+            <h5><strong>1. Select a garage</strong></h5>
             <br>
               <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location, selected: params[:garage_id]), data:{action: "change->invoice#filterGarage", invoice_target:"garage"}%>
             <br>
             <br>
-            <h5><strong>Booking period</strong></h5>
+            <h5><strong>2. Booking period</strong></h5>
               <br>
             <div class="invoice-client-container">
               <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr", action:"change->invoice#filterDates", invoice_target:"startDate" } }  %>
               <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
             </div>
-          <div>
-            <%= i.submit(class: "btn btn-primary") %>
-           </div>
           </div>
           <div class="col-6 invoice-right">
             <div data-invoice-target="spaces"class="spaces-right">
             </div>
-            <div class="total-price flex-end">
-              <h5>Total<span data-invoice-target="price"></span>€</h5>
+            <div class="total-price text-center">
+              <h5>Total <span data-invoice-target="price"></span>€</h5>
             </div>
             </div>
             <br>
+            <div>
+              <%= i.submit(class: "btn btn-primary") %>
+            </div class="d-flex align-items-end">
+              <% end %>
           </div>
         </div>
       </div>
-    <% end %>
+  </div>
+  <div>
   </div>
 </div>
