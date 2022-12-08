@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="newinvoice"
 export default class extends Controller {
-  static targets = ["questionOne", "questionTwo","newClientForm", "changeBlue","changeBlueAlso", "inputForm"]
+  static targets = ["questionOne", "questionTwo", "newClientForm","changeBlue", "changeBlueAlso"]
 
   initialize() {
     if (this.inputFormTarget.value > 1) {
