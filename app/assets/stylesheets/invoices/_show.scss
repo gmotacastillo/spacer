@@ -1,0 +1,40 @@
+.background-blue {
+  display: flex;
+  flex-direction: column;
+  background-color: #0D6EFD;
+  color: white;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-container-invoice2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.filter-container-invoice2-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-container-invoice2-right {
+  display: flex;
+  flex-direction: column;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+body{font-family: 'Maven Pro', sans-serif;}
+
+hr{color: #0000004f;}
+
+.add td{color: #c5c4c4;text-transform: uppercase;font-size: 12px}
+
+.content{font-size: 14px}
