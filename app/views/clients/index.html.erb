@@ -10,50 +10,49 @@
     <i class="zmdi zmdi-download"></i>
   </header>
 
-  <div>
-    <!--search function form---->
-    <div class="container-search-clients">
-      <%= form_with url: "/clients", method: :get do |form| %>
-          <%= form.text_field :q %>
-          <%= form.submit "Search", class: "myButton" %>
-        <% end %>
-        <%= link_to "Refresh", request.params.merge(q: nil), class: "myButton" %>
-      <!---% end %-->
-    </div>
-    <!--end search function---->
-    <div class="table-grey-border">
-      <table class="table">
-        <thead>
-          <tr>
-          <th class="table-headers-dark-grey">Name</th>
-          <th class="table-headers-dark-grey">Company</th>
-          <th class="table-headers-dark-grey">Units rented</th>
-          <th class="table-headers-dark-grey">Status</th>
 
-          <th class="table-headers-dark-grey">Infos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @clients.each do |client| %>
-            <tr class="table-cells-dark-grey">
-              <td><%= "#{client.first_name} #{client.last_name}" %></td>
-              <td><%= client.company %></td>
-              <td class="table-align-center"><%= client.invoices.count %></td>
-              <% client_activ_invoices = client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}%>
-              <% if client_activ_invoices.count > 0 %>
-                <td class="text-status-activ">Activ</td>
-                <% else %>
-                <td class="text-status-inactiv">Inactiv</td>
+  <!--search function form---->
+  <div class="container-search-clients">
+    <%= form_with url: "/clients", method: :get do |form| %>
+        <%= form.text_field :q %>
+        <%= form.submit "Search", class: "myButton" %>
+      <% end %>
+      <%= link_to "Refresh", request.params.merge(q: nil), class: "myButton" %>
+    <!---% end %-->
+  </div>
+  <!--end search function---->
+  <div class="table-grey-border">
+    <table class="table">
+      <thead>
+        <tr>
+        <th class="table-headers-dark-grey">Name</th>
+        <th class="table-headers-dark-grey">Company</th>
+        <th class="table-headers-dark-grey">Units rented</th>
+        <th class="table-headers-dark-grey">Status</th>
+
+        <th class="table-headers-dark-grey">Infos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr class="table-cells-dark-grey">
+            <td><%= "#{client.first_name} #{client.last_name}" %></td>
+            <td><%= client.company %></td>
+            <td class="table-align-center"><%= client.invoices.count %></td>
+            <% client_activ_invoices = client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}%>
+            <% if client_activ_invoices.count > 0 %>
+              <td class="text-status-activ">Activ</td>
+              <% else %>
+              <td class="text-status-inactiv">Inactiv</td>
+            <% end %>
+            <td>
+              <%= link_to  client_path(client) do %>
+                <p class="icon-table-info"><i class="fa-solid fa-circle-info"></i></p>
               <% end %>
-              <td>
-                <%= link_to  client_path(client) do %>
-                  <p class="icon-table-info"><i class="fa-solid fa-circle-info"></i></p>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
