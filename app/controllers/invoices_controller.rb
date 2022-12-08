@@ -75,7 +75,7 @@ class InvoicesController < ApplicationController
   # end
 
   def create_stripe_order(invoice)
-    product = Stripe::Product.create({name:invoice.id})
+    product = Stripe::Product.create({name:"Parking Spaces Invoice ##{invoice.id} for #{@client.first_name} #{@client.last_name}"})
     price = Stripe::Price.create({currency:"EUR", unit_amount: (invoice.price * 100).to_i, product: product})
     link = Stripe::PaymentLink.create({ line_items: [{ price: price.id, quantity: 1 }, ], })
     @invoice.update(payment_url: link.url)
