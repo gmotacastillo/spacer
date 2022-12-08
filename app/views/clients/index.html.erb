@@ -42,9 +42,9 @@
             <td class="table-align-center"><%= client.invoices.count %></td>
             <% client_activ_invoices = client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}%>
             <% if client_activ_invoices.count > 0 %>
-              <td class="text-status-activ">Activ</td>
+              <td class="text-status-activ">Active</td>
               <% else %>
-              <td class="text-status-inactiv">Inactiv</td>
+              <td class="text-status-inactiv">Inactive</td>
             <% end %>
             <td>
               <%= link_to  client_path(client) do %>
