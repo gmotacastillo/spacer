@@ -18,6 +18,17 @@
 // .filter-container-invoice-left {
 
 // }
+
+.circle-number {
+  background: #0089FF;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+}
+
 .filter-container-invoice-right ul {
   display: flex;
   flex-direction: row;
@@ -113,4 +124,9 @@
     box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
     padding: 1rem;
     background-color: white;
+}
+
+#garage {
+  font-weight: normal;
+  font-size: 18px;
 }
