@@ -26,6 +26,7 @@
  // border: solid 1px black;
   padding:10px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
+  transition: all .2s ease-in-out;
 }
 //for upper part
 .number {
@@ -100,6 +101,7 @@ color: rgb(0, 0, 0) ;
 
 .upper-container-items:hover{
   background: #287bff;
+  transform: scale(1.1);
 }
 
 .upper-container-items:hover p{

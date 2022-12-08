@@ -15,15 +15,16 @@ export default class extends Controller {
           const email = e.dataset.email
           const endDate = e.dataset.enddate
 
+          e.style.display = "flex"
           e.innerHTML = `<div class="show-grid-title">
-          <div class="space-id"> # ${counter}</div>
-          <div>
-            <a href="#">${lastname}</a>
-            <p>${email}</p>
-            <p>${endDate}</p>
-            </div>
-          </div>`
+                        <div class="space-id"> # ${counter}</div>
+                        <div>
+                          <a href="#">${lastname}</a>
+                          <p><strong>${endDate}</strong></p>
+                          </div>
+                        </div>`
         // }
       }})
     }
   }
+  // <p>${email}</p>
