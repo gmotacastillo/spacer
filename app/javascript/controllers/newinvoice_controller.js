@@ -22,7 +22,7 @@ export default class extends Controller {
     console.log("hello")
     this.questionOneTarget.hidden = true;
     this.questionTwoTarget.hidden = false;
-    this.changeBlueTarget.classList.add("text-primary")
+    this.changeBlueTarget.classList.add("circle-number")
     this.changeBlueAlsoTarget.classList.add("text-primary")
   }
 

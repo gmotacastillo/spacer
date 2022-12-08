@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-3">
+<div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -14,8 +14,8 @@
                                 <td>From</td>
                             </tr>
                             <tr class="content">
-                                <td class="font-weight-bold"><%= @invoice.client.company %><br>Attn: <%= current_user.first_name+" "+current_user.last_name%> <br><%= @invoice.client.phone_number %></td>
-                                <td class="font-weight-bold"><%= current_user.company %> <br> Attn: <%= current_user.first_name+" "+current_user.last_name%> <br><%= current_user.phone_number %></td>
+                                <td class="font-weight-bold"><%= @invoice.client.company %><br><strong>Attn: </strong><%= current_user.first_name+" "+current_user.last_name%> <br><%= @invoice.client.phone_number %></td>
+                                <td class="font-weight-bold"><%= current_user.company %> <br><strong>Attn: </strong><%= current_user.first_name+" "+current_user.last_name%> <br><%= current_user.phone_number %></td>
                             </tr>
                         </tbody>
                     </table>
@@ -48,7 +48,7 @@
                             <tr class="add">
                             </tr>
                             <tr class="content">
-                                <td>         <a class="btn btn-primary" href="<%= @invoice.payment_url %>" role="button">Pay this invoice!</a></td>
+                                <td>         <a class="btn btn-primary" href="<%= @invoice.payment_url %>" role="button">Share this invoice</a></td>
                             </tr>
                         </tbody>
                     </table>
