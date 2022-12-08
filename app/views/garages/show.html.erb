@@ -29,11 +29,15 @@
       <% counter = 1 %>
       <% @parking_spaces.each do |space|%>
         <% date = params[:date] ? Date.parse(params[:date]) : Date.today %>
-        <div data-quickinvoice-target="gridElement" class="show-parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>">
+        <% if space.unavailable?(date) %>
+          <% client = space.invoices.find{|invoice|invoice.end_date > date }.client %>
+          <% invoice = space.invoices.find{|invoice|invoice.end_date > date } %>
+        <% end %>
+        <div data-quickinvoice-target="gridElement" class="show-parking-spaces <%= space.unavailable?(date) ? "red" : "green"%>" data-lastname= <%= client.try(:last_name) %> data-counter= <%= counter %> data-email= <%= client.try(:email)%> data-enddate=<%= invoice.try(:end_date)%>>
           <div class="show-grid-title">
             <div class="space-id"> # <%= counter %></div>
             <div class="quickinvoice-btn" data-quickinvoice-target="invoiceBtn">
-              <%= link_to "", new_invoice_path, class:"fa-solid fa-plus" %>
+              <%= link_to "", new_invoice_path(parking_space_id: space.id, garage_id: space.garage.id), class:"fa-solid fa-plus" %>
             </div>
           </div>
         </div>

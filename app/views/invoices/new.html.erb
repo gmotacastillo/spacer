@@ -1,4 +1,4 @@
-<div class="page-container" data-controller="newinvoice">
+<div class="page-container" data-controller="newinvoice" >
   <div class="filter-container-invoice">
     <div class="filter-container-invoice-left">
       <h1>Generate invoice</h1>
@@ -11,12 +11,11 @@
       </ul>
     </div>
   </div>
-  <div data-controller="newinvoice" >
+  <div data-controller="newinvoice">
     <%= simple_form_for [@invoice], data:{turbo: false} do |i| %>
     <div>
-      <div  data-newinvoice-target="questionOne newClientForm" >
-        <%= i.input :client_id, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first, selected: @client.id, include_blank: true, data: {action: "change->newinvoice#showNewClientForm"} %>
-
+      <div data-newinvoice-target="questionOne" >
+        <%= i.input :client_id, collection: current_user.clients.map { |client| [client.id, "#{client.first_name} #{client.last_name}"]}, label_method: :second, value_method: :first, selected: @client.id, include_blank: false, prompt: "New", input_html: {data: {newinvoice_target: "inputForm", action: "change->newinvoice#showNewClientFormInvoice"} }%>
         <%= i.simple_fields_for :clients do |client| %>
             <div class="invoice-client-container" data-newinvoice-target="newClientForm">
               <div>
@@ -41,26 +40,26 @@
             <br>
             <h5><strong>Select a lot</strong></h5>
             <br>
-              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location), data:{action: "change->invoice#filterGarage", invoice_target:"garage"}, class:"grey"%>
+              <%= select_tag :garage, options_from_collection_for_select(@garages, :id, :location, selected: params[:garage_id]), data:{action: "change->invoice#filterGarage", invoice_target:"garage"}%>
             <br>
             <br>
             <h5><strong>Booking period</strong></h5>
-            <br>
+              <br>
             <div class="invoice-client-container">
               <%= i.input :start_date, as: :string, input_html: { data: { controller: "flatpickr", action:"change->invoice#filterDates", invoice_target:"startDate" } }  %>
               <%= i.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
             </div>
-            <div>
+          <div>
             <%= i.submit(class: "btn btn-primary") %>
-            </div>
+           </div>
           </div>
           <div class="col-6 invoice-right">
-            <div data-invoice-target="spaces" class="spaces-right">
+            <div data-invoice-target="spaces"class="spaces-right">
             </div>
             <div class="total-price flex-end">
-              <h5>Total <strong><span data-invoice-target="price"></span>€</strong></h5>
+              <h5>Total<span data-invoice-target="price"></span>€</h5>
             </div>
-          </div>
+            </div>
             <br>
           </div>
         </div>

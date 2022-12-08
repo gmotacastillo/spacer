@@ -21,37 +21,39 @@
       <!---% end %-->
     </div>
     <!--end search function---->
-    <table class="table">
-      <thead>
-        <tr>
-        <th class="text-headers">Name</th>
-        <th class="text-headers">Company</th>
-        <th class="text-headers">Units rented</th>
-        <th class="text-headers">Status</th>
-
-        <th class="text-headers">Infos</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @clients.each do |client| %>
+    <div class="table-grey-border">
+      <table class="table">
+        <thead>
           <tr>
-            <td class="text"><%= "#{client.first_name} #{client.last_name}" %></td>
-            <td class="text"><%= client.company %></td>
-            <td class="text"><%= client.invoices.count %></td>
-            <% client_activ_invoices = client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}%>
-            <% if client_activ_invoices.count > 0 %>
-              <td class="text-status-activ">Activ</td>
-              <% else %>
-              <td class="text-status-inactiv">Inactiv</td>
-            <% end %>
-            <td>
-              <%= link_to  client_path(client) do %>
-                <p class="icon-table-info"><i class="fa-solid fa-circle-info"></i></p>
-              <% end %>
-            </td>
+          <th class="table-headers-dark-grey">Name</th>
+          <th class="table-headers-dark-grey">Company</th>
+          <th class="table-headers-dark-grey">Units rented</th>
+          <th class="table-headers-dark-grey">Status</th>
+
+          <th class="table-headers-dark-grey">Infos</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @clients.each do |client| %>
+            <tr class="table-cells-dark-grey">
+              <td><%= "#{client.first_name} #{client.last_name}" %></td>
+              <td><%= client.company %></td>
+              <td class="table-align-center"><%= client.invoices.count %></td>
+              <% client_activ_invoices = client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)}%>
+              <% if client_activ_invoices.count > 0 %>
+                <td class="text-status-activ">Activ</td>
+                <% else %>
+                <td class="text-status-inactiv">Inactiv</td>
+              <% end %>
+              <td>
+                <%= link_to  client_path(client) do %>
+                  <p class="icon-table-info"><i class="fa-solid fa-circle-info"></i></p>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

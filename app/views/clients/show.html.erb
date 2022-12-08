@@ -1,48 +1,48 @@
 <div class="main-clients-container">
    <header class="clients-header">
-      <h1 class="number"><%= "#{@client.first_name} #{@client.last_name}"%></h1>
+      <h1 class="number"><%= "Client"%></h1>
       <i class="zmdi zmdi-download"></i>
   </header>
 
   <div class="container-client-info"> <!---This div contains the general infos about client--->
     <div class="item-client-table">
-      <table class="text">
+      <table class="text-infos-client">
         <tr>
-          <th><p>Company:</p></th>
-          <td><p><%= @client.company %></p></td>
+          <td><i class="fa-solid fa-id-card icon-grey-client-show"></i>&nbsp</td>
+          <td>&nbsp<%= "#{@client.first_name} #{@client.last_name}"%></td>
         </tr>
         <tr>
-          <th><p>Phone:</p></th>
-          <td><p><%= @client.phone_number %></p></td>
+          <td><i class="fa-solid fa-industry icon-grey-client-show"></i>&nbsp</td>
+          <td>&nbsp<%= @client.company %></td>
         </tr>
         <tr>
-          <th><p>Email:</p></th>
-          <td><p><%= @client.email %></p></td>
+          <td><i class="fa-solid fa-phone icon-grey-client-show"></i>&nbsp</td>
+          <td>&nbsp<%= @client.phone_number %></td>
         </tr>
         <tr>
-          <th><p>Client-id:</p></th>
-          <td><p><%= @client.id%></p></td>
+          <td><i class="fa-solid fa-envelope icon-grey-client-show"></i>&nbsp</td>
+          <td>&nbsp<%= @client.email %></td>
         </tr>
       </table>
     </div>
     <div class="client-info-buttons">
-      <p><%= link_to "Edit",clients_path, class: "myButton"%></p>
-      <p><%= link_to "Contact",clients_path, class: "myButton"%></p>
+      <p><%= link_to "Edit", edit_client_path(@client), class: "myButton"%></p>
+      <p><%= link_to "Contact", edit_client_path(@client), class: "myButton"%></p>
     </div>
   </div>
 
 
-  <div> <!---This div contains the activ invoices--->
+  <div class="table-grey-border"> <!---This div contains the activ invoices--->
     <table class="table sortable">
         <thead>
           <tr>
-            <th class="text-headers">Invoice-ID</th>
-            <th class="text-headers">Start date</th>
-            <th class="text-headers">End date</th>
-            <th class="text-headers">Price</th>
-            <th class="text-headers">Payment confirmed</th>
-            <th class="text-headers">Status</th>
-            <th class="text-headers">Action</th>
+            <th class="table-headers-dark-grey">Invoice-ID</th>
+            <th class="table-headers-dark-grey">Start date</th>
+            <th class="table-headers-dark-grey">End date</th>
+            <th class="table-headers-dark-grey">Price</th>
+            <th class="table-headers-dark-grey">Payment confirmed</th>
+            <th class="table-headers-dark-grey">Status</th>
+            <th class="table-headers-dark-grey"></th>
           </tr>
         </thead>
         <tbody>
@@ -51,24 +51,24 @@
           <%# past_invoices_client = @client.invoices.select { |invoice| invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today)} %>
 
           <% @client.invoices.order("end_date DESC, start_date").each do |invoice| %>
-            <tr>
-              <td class="text"><%= invoice.id%></td>
-              <td class="text"><%= invoice.start_date %></td>
-              <td class="text"><%= invoice.end_date %></td>
-              <td class="text"><%= invoice.price %></td>
-              <td class="text"><%= invoice.payment_confirmed %></td>
+            <tr class="table-cells-dark-grey">
+              <td><%= invoice.id%></td>
+              <td><%= invoice.start_date %></td>
+              <td><%= invoice.end_date %></td>
+              <td><%= invoice.price %></td>
+              <td class="table-align-center "><%= invoice.payment_confirmed %></td>
               <!--below the td should vary depending on the status-->
               <% if invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today) %>
-                <td class="text-activ">Activ</td>
+                <td class="text-activ">Currently</td>
                 <% elsif invoice.end_date.after?(Date.today) && invoice.start_date.after?(Date.today) %>
-                <td class="text-future">Future</td>
+                <td class="text-future">Upcoming</i></td>
                 <% elsif invoice.end_date.before?(Date.today) && invoice.start_date.before?(Date.today) %>
-                <td class="text-past">Past</td>
+                <td class="text-past">Prior</td>
               <% end %>
               <!--below is the delete function for each invoice-->
-              <td class="text">
+              <td class="text table-align-center ">
                 <%= link_to invoice_path(invoice.id, client_id: @client.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete this invoice?"} do %>
-                  <i class="fa-solid fa-trash"></i>
+                  <i class="fa-solid fa-trash icon-grey-client-show"></i>
                 <% end %>
               </td>
             </tr>
@@ -78,9 +78,12 @@
   </div>
 
   <div class="buttons-container-client"> <!---This div contains the action buttons--->
-    <div class="new-invoice-butt"></div>
-    <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "myButton"%></p>
-    <p><%= link_to "Back to clients", clients_path, class: "myButton" %></p>
+    <div class="new-invoice-button">
+      <p><%= link_to "Back to clients", clients_path, class: "myButton" %></p>
+    </div>
+    <div class="back-button">
+      <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "myButton"%></p>
+    </div>
     <p><%#= link_to "Delete client"%></p>
   </div>
 </div>

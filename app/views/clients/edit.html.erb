@@ -1,0 +1,23 @@
+<h1>edit client</h1>
+<div class="container mr-3 vh-100">
+  <%= simple_form_for [@client], data:{turbo: false} do |f| %>
+    <div class="row">
+      <div class="col-sm mb-3">
+        <h2>Client name</h2>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <br>
+        <h2>Phone number</h2>
+        <%= f.input :phone_number, label: false %>
+        <br>
+        <h2>E-mail</h2>
+        <br>
+        <%= f.input :email, label: false %>
+        <h2>Company</h2>
+        <br>
+        <%= f.input :company, label: false %>
+        <%= f.submit "Edit", class: "btn btn-create" %>
+      </div>
+    <div>
+  <% end %>
+</div>
