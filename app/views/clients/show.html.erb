@@ -59,7 +59,7 @@
               <td class="table-align-center "><%= invoice.payment_confirmed %></td>
               <!--below the td should vary depending on the status-->
               <% if invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today) %>
-                <td class="text-activ">Currently</td>
+                <td class="text-activ">Current</td>
                 <% elsif invoice.end_date.after?(Date.today) && invoice.start_date.after?(Date.today) %>
                 <td class="text-future">Upcoming</i></td>
                 <% elsif invoice.end_date.before?(Date.today) && invoice.start_date.before?(Date.today) %>
