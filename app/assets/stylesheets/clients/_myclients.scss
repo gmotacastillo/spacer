@@ -14,8 +14,9 @@ div.main-clients-container{
   background-color: white;
   overflow-y: scroll;
   overflow-x: hidden;
-  flex-direction: row;
-  gap: 50px;
+  flex-direction: column;
+  gap: 15px;
+  display: flex;
 }
 
 .clients-header{
