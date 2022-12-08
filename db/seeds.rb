@@ -27,10 +27,10 @@ user3 = User.create(email:"mathis@info.com", encrypted_password: "rkgjbsdalkfbsa
 puts "Users created"
 puts "Creating garages..."
 
-garage1 = Garage.create(name: "Barceloneta", location: "Barcelonetta", price: 10, average_size: 10, description: "Modern Garage", capacity:5, user_id:1 )
-garage2 = Garage.create(name: "Diagonal", location: "Diagonal", price: 10, average_size: 10, description: "Older Garage ", capacity:17, user_id: 1 )
-#garage3 = Garage.create(name: "Placa Catalunya", location: "Placa Catalunya", price: 17, average_size: 10, description: "Big Garage", capacity:27, user_id: 1)
-#garage4 = Garage.create(name: "Rambla", location: "Rambla", price: 18, average_size: 12, description: "Heated Garage", capacity:22, user_id: 1)
+garage1 = Garage.create(name: "Barceloneta", location: "Barcelonetta", price: 10, average_size: 10, description: "Modern Garage", capacity:5, user_id:user3.id )
+garage2 = Garage.create(name: "Diagonal", location: "Diagonal", price: 10, average_size: 10, description: "Older Garage ", capacity:17, user_id: user3.id )
+#garage3 = Garage.create(name: "Placa Catalunya", location: "Placa Catalunya", price: 17, average_size: 10, description: "Big Garage", capacity:27, user_id:user3.id)
+#garage4 = Garage.create(name: "Rambla", location: "Rambla", price: 18, average_size: 12, description: "Heated Garage", capacity:22, user_id:user3.id)
 #garage5 = Garage.create(name: "Village Garage", location: "LA", price: 11, average_size: 11, description: "very good!!!!", capacity:7, user_id: 5)
 #garage6 = Garage.create(name: "Old Garage", location: "Las Vegas", price: 25, average_size: 15, description: "very good!", capacity:15, user_id: 3)
 #garage7 = Garage.create(name: "Garage", location: "NY", price: 22, average_size: 16, description: "very good!", capacity:15, user_id: 3)
@@ -83,17 +83,17 @@ puts "parking spaces created"
 
 puts "Creatings clients.."
 
-client1 = Client.create(first_name: "Bob", last_name: "Schmit", phone_number: "691115147" , email: "bob.schmit@gmail.com", company: "Nordica", user_id: 1, created_at:Date.yesterday)
-client2 = Client.create(first_name: "Daniel", last_name: "Biren", phone_number: "6912345147" , email: "daniel.biren@gmail.com", company: "Scarpa", user_id: 1, created_at:(Date.tomorrow + 1))
-client3 = Client.create(first_name: "Joe", last_name: "Koster", phone_number: "69387363" , email: "joekoster@gmail.com", company: "Condis", user_id: 1, created_at:(Date.tomorrow + 1))
-client4 = Client.create(first_name: "Luc", last_name: "Welter", phone_number: "6453345" , email: "luc.welter@gmail.com", company: "Vapiano", user_id: 1, created_at:(Date.tomorrow))
-client5 = Client.create(first_name: "Robi", last_name: "Muller", phone_number: "34787875" , email: "roby.muller@gmail.com", company: "Lufthansa", user_id: 1, created_at:Date.yesterday)
-client6 = Client.create(first_name: "Tom", last_name: "Frankly", phone_number: "456760" , email: "codeworks@ping.com", company: "Codeworks", user_id: 1, created_at:Date.today)
-client7 = Client.create(first_name: "Peter", last_name: "Hansen", phone_number: "67433335", email: "Peter@info.com", company: "Helly Hansen", user_id: 1, created_at:Date.today)
-client8 = Client.create(first_name: "Ivan", last_name: "Labalestra", phone_number: "156744" , email: "Barilla@info.com", company: "Barilla", user_id: 1, created_at:(Date.tomorrow + 1))
-client9 = Client.create(first_name: "Gerard", last_name: "Doe", phone_number: "464567" , email: "robert@ping.com", company: "Carrefour", user_id: 1, created_at:Date.today)
-client10 = Client.create(first_name: "Max", last_name: "Jaeger", phone_number: "436de4567" , email: "jegenm@gmail.com", company: "Auchan", user_id: 1, created_at:Date.today)
-client11 = Client.create(first_name: "Gerard", last_name: "Doe", phone_number: "4645sd67" , email: "doe@viva.com", company: "Viva", user_id: 1, created_at:Date.today)
+client1 = Client.create(first_name: "Bob", last_name: "Schmit", phone_number: "691115147" , email: "bob.schmit@gmail.com", company: "Nordica", user_id:user3.id, created_at:Date.yesterday)
+client2 = Client.create(first_name: "Daniel", last_name: "Biren", phone_number: "6912345147" , email: "daniel.biren@gmail.com", company: "Scarpa", user_id:user3.id, created_at:(Date.tomorrow + 1))
+client3 = Client.create(first_name: "Joe", last_name: "Koster", phone_number: "69387363" , email: "joekoster@gmail.com", company: "Condis", user_id:user3.id, created_at:(Date.tomorrow + 1))
+client4 = Client.create(first_name: "Luc", last_name: "Welter", phone_number: "6453345" , email: "luc.welter@gmail.com", company: "Vapiano", user_id:user3.id, created_at:(Date.tomorrow))
+client5 = Client.create(first_name: "Robi", last_name: "Muller", phone_number: "34787875" , email: "roby.muller@gmail.com", company: "Lufthansa", user_id:user3.id, created_at:Date.yesterday)
+client6 = Client.create(first_name: "Tom", last_name: "Frankly", phone_number: "456760" , email: "codeworks@ping.com", company: "Codeworks", user_id:user3.id, created_at:Date.today)
+client7 = Client.create(first_name: "Peter", last_name: "Hansen", phone_number: "67433335", email: "Peter@info.com", company: "Helly Hansen", user_id:user3.id, created_at:Date.today)
+client8 = Client.create(first_name: "Ivan", last_name: "Labalestra", phone_number: "156744" , email: "Barilla@info.com", company: "Barilla", user_id:user3.id, created_at:(Date.tomorrow + 1))
+client9 = Client.create(first_name: "Gerard", last_name: "Doe", phone_number: "464567" , email: "robert@ping.com", company: "Carrefour", user_id:user3.id, created_at:Date.today)
+client10 = Client.create(first_name: "Max", last_name: "Jaeger", phone_number: "436de4567" , email: "jegenm@gmail.com", company: "Auchan", user_id:user3.id, created_at:Date.today)
+client11 = Client.create(first_name: "Gerard", last_name: "Doe", phone_number: "4645sd67" , email: "doe@viva.com", company: "Viva", user_id:user3.id, created_at:Date.today)
 
 puts "Clients created"
 
