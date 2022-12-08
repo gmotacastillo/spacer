@@ -26,13 +26,13 @@
       </table>
     </div>
     <div class="client-info-buttons">
-      <p><%= link_to "Edit", edit_client_path(@client), class: "btn btn-primary"%></p>
-      <p><%= link_to "Contact", edit_client_path(@client), class: "btn btn-primary"%></p>
+      <%= link_to "Edit", edit_client_path(@client), class: "btn btn-primary"%>
+      <%= link_to "Contact", edit_client_path(@client), class: "btn btn-primary"%>
     </div>
   </div>
 
 
-  <div class="table-grey-border"> <!---This div contains the activ invoices--->
+  <div> <!---This div contains the activ invoices--->
     <table class="table sortable">
         <thead>
           <tr>
@@ -79,11 +79,10 @@
 
   <div class="buttons-container-client"> <!---This div contains the action buttons--->
     <div class="new-invoice-button">
-      <p><%= link_to "Back to clients", clients_path, class: "myButton" %></p>
+      <p><%= link_to "Back to clients", clients_path, class: "btn btn-primary" %></p>
     </div>
     <div class="back-button">
-      <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "myButton"%></p>
+      <p><%= link_to "New invoice", new_client_invoice_path(@client.id) , class: "btn btn-primary"%></p>
     </div>
-    <p><%#= link_to "Delete client"%></p>
   </div>
 </div>
