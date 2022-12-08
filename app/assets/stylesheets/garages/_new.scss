@@ -75,7 +75,7 @@
   padding-bottom: 4rem;
   padding-right: 6rem;
   padding-left: 6rem;
-  box-shadow: rgb(52, 98, 171) 0px 0px 5000px 0px;
+  box-shadow: rgb(52, 98, 171) 0px 0px 10px 0px;
   height: 25rem;
   .form-control{
     margin-top: 1rem;
@@ -84,11 +84,6 @@
   }
 }
 
-.generate-lot-container:hover{
-  background: #00549e;
-  transition-timing-function: ease-in;
-  transition-delay: 0.1s;
-}
 .form-btn{
   background:white;
   color: black;
@@ -96,20 +91,17 @@
   width: 5rem;
   border: none;
   height: 2rem;
-  box-shadow: rgba(255, 255, 255, 0.767) 0px 0px 10px 0px;
+  box-shadow: rgba(255, 255, 255, 0.767) 0px 0px 5px 0px;
+  transition: all .2s ease-in-out;
 }
 
 .form-btn:hover{
-  background: #0089FF;
-  color: white;
-  border-radius: 10px;
-  width: 5rem;
-  border: none;
-  border: white 2px solid;
+  transform: scale(1.1);
+  color: #0089FF;
 }
 
 .generate-lot-container h4{
-  opacity: 30%;
+  opacity: 60%;
   font-size: 15px;
 }
 

@@ -16,6 +16,7 @@ body{
 
 .show-grid-holder {
   overflow-y: scroll;
+  overflow-x: scroll;
   height: 68vh;
   display: flex;
   flex-wrap: wrap;
@@ -50,10 +51,15 @@ body{
       max-height: 10rem;
       min-width: 8rem;
       max-width: 10rem;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      transition: all .2s ease-in-out;
     }
     .show-parking-spaces:hover{
-      box-shadow: rgba(0, 140, 255, 0.356) 0px 0px 15px 0px;
-      transform: scale(1.05, 1.05);
+      border: 0.5px solid blue;
+      transform: scale(1.1);
     }
   }
 
@@ -112,6 +118,15 @@ body{
   padding-left: 0;
 }
 
+.show-parking-spaces .icon-white{
+  text-align: center;
+  color: #ffffff;
+}
+
+.show-parking-spaces .icon-white:hover{
+  color: #0089FF;
+}
+
 select{
   border: none;
   font-size: 20px;
@@ -129,9 +144,9 @@ ul button{
 }
 
 .space-id{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .red{
@@ -140,6 +155,10 @@ ul button{
 
 .green{
   background: #70D159;
+}
+
+.quickinvoice-btn{
+  text-align: center;
 }
 
 // date formatting below
