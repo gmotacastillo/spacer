@@ -115,17 +115,17 @@ puts "Invoices created"
 
 
 puts "Creating invoice space.."
-invoice_space1 = InvoiceSpace.create(parking_space_id: parkingspace17, invoice_id: invoice1.id)
-invoice_space2 = InvoiceSpace.create(parking_space_id: parkingspace20, invoice_id: invoice2.id)
-invoice_space3 = InvoiceSpace.create(parking_space_id: parkingspace3, invoice_id: invoice3.id)
-invoice_space4 = InvoiceSpace.create(parking_space_id: parkingspace4, invoice_id: invoice4.id)
-invoice_space5 = InvoiceSpace.create(parking_space_id: parkingspace5, invoice_id: invoice5.id)
-invoice_space6 = InvoiceSpace.create(parking_space_id: parkingspace9, invoice_id: invoice9.id)
-invoice_space7 = InvoiceSpace.create(parking_space_id: parkingspace8, invoice_id: invoice8.id)
-invoice_space8 = InvoiceSpace.create(parking_space_id: parkingspace7, invoice_id: invoice7.id)
-invoice_space9 = InvoiceSpace.create(parking_space_id: parkingspace6, invoice_id: invoice6.id)
-invoice_space10 = InvoiceSpace.create(parking_space_id: parkingspace25, invoice_id: invoice10.id)
-invoice_space11 = InvoiceSpace.create(parking_space_id: parkingspace27, invoice_id: invoice11.id)
-invoice_space12 = InvoiceSpace.create(parking_space_id: parkingspace29, invoice_id: invoice12.id)
+invoice_space1 = InvoiceSpace.create(parking_space_id: parkingspace17.id, invoice_id: invoice1.id)
+invoice_space2 = InvoiceSpace.create(parking_space_id: parkingspace20.id, invoice_id: invoice2.id)
+invoice_space3 = InvoiceSpace.create(parking_space_id: parkingspace3.id, invoice_id: invoice3.id)
+invoice_space4 = InvoiceSpace.create(parking_space_id: parkingspace4.id, invoice_id: invoice4.id)
+invoice_space5 = InvoiceSpace.create(parking_space_id: parkingspace5.id, invoice_id: invoice5.id)
+invoice_space6 = InvoiceSpace.create(parking_space_id: parkingspace9.id, invoice_id: invoice9.id)
+invoice_space7 = InvoiceSpace.create(parking_space_id: parkingspace8.id, invoice_id: invoice8.id)
+invoice_space8 = InvoiceSpace.create(parking_space_id: parkingspace7.id, invoice_id: invoice7.id)
+invoice_space9 = InvoiceSpace.create(parking_space_id: parkingspace6.id, invoice_id: invoice6.id)
+invoice_space10 = InvoiceSpace.create(parking_space_id: parkingspace25.id, invoice_id: invoice10.id)
+invoice_space11 = InvoiceSpace.create(parking_space_id: parkingspace27.id, invoice_id: invoice11.id)
+invoice_space12 = InvoiceSpace.create(parking_space_id: parkingspace29.id, invoice_id: invoice12.id)
 
 puts "Invoice_spaces created"
