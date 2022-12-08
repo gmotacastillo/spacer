@@ -27,7 +27,7 @@ user3 = User.create(email:"mathis@info.com", encrypted_password: "rkgjbsdalkfbsa
 puts "Users created"
 puts "Creating garages..."
 
-garage1 = Garage.create(name: "Barceloneta", location: "Barcelonetta", price: 10, average_size: 10, description: "Modern Garage", capacity:5, user_id:user3.id )
+garage1 = Garage.create(name: "Barceloneta", location: "Barceloneta", price: 10, average_size: 10, description: "Modern Garage", capacity:5, user_id:user3.id )
 garage2 = Garage.create(name: "Diagonal", location: "Diagonal", price: 10, average_size: 10, description: "Older Garage ", capacity:17, user_id: user3.id )
 #garage3 = Garage.create(name: "Placa Catalunya", location: "Placa Catalunya", price: 17, average_size: 10, description: "Big Garage", capacity:27, user_id:user3.id)
 #garage4 = Garage.create(name: "Rambla", location: "Rambla", price: 18, average_size: 12, description: "Heated Garage", capacity:22, user_id:user3.id)
