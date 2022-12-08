@@ -14,9 +14,11 @@ div.main-clients-container{
   background-color: white;
   overflow-y: scroll;
   overflow-x: hidden;
-  flex-direction: column;
-  gap: 15px;
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+
 }
 
 .clients-header{
@@ -152,7 +154,7 @@ justify-content: flex-end;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: auto;
+
 }
 .table-align-center {
   text-align: center;
