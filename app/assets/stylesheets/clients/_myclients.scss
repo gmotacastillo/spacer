@@ -113,7 +113,8 @@ justify-content: flex-end;
   padding: 15px;
   display: flex;
   justify-content: space-between;
-
+  border: rgb(198, 198, 198) solid 1px;
+  border-radius: 10px;
 }
 
 .item-client-table {
@@ -122,6 +123,17 @@ justify-content: flex-end;
   padding:1px;
   // box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
 }
+
+.table-grey-border {
+  border: rgb(198, 198, 198) solid 1px;
+  border-radius: 10px;
+  padding: 15px;
+
+}
+
+
+
+
 
 .client-info-buttons {
   border-radius: 15px;
@@ -138,27 +150,41 @@ justify-content: flex-end;
 .buttons-container-client {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-
+  justify-content: space-between;
+  width: auto;
 }
-
+.table-align-center {
+  text-align: center;
+}
 .back-button {
-
+display: flex;
 }
 .new-invoice-button {
-
+display: flex;
 }
 
 .text-infos-client {
   font-size: 18px;
   color: #273142;
   font-weight: normal;
+  text-align: left;
 }
-.text-infos-client-blue {
-  font-size: 18px;
-  color: #273142;
-  font-weight: normal;
+
+.icon-grey-client-show {
+  color: $light-text;
+}
+.icon-blue-client-show {
   color: $blue;
+}
 
+.table-headers-dark-grey {
+  color: black;
+  font-weight: normal;
+  font-size: 18px;
+}
 
+.table-cells-dark-grey {
+  color: rgb(43, 43, 43);
+  font-weight: normal;
+  font-size: 16px;
 }
