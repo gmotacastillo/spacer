@@ -42,7 +42,7 @@
             <td class="text"><%= "#{invoice.client.first_name} #{invoice.client.last_name}" %></td>
             <td class="text"><%= invoice.start_date %></td>
             <td class="text"><%= invoice.start_date %></td>
-            <td class="text"><%= invoice.price %></td>
+            <td class="text"><%= invoice.price.to_i %>€</td>
             <td class="paid-text">Paid</td>
             </tr>
           <% end %>

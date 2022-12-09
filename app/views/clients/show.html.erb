@@ -55,7 +55,7 @@
               <td><%= invoice.id%></td>
               <td><%= invoice.start_date %></td>
               <td><%= invoice.end_date %></td>
-              <td><%= invoice.price %></td>
+              <td><%= invoice.price.to_i %>€</td>
               <td class="table-align-center "><%= invoice.payment_confirmed %></td>
               <!--below the td should vary depending on the status-->
               <% if invoice.end_date.after?(Date.today) && invoice.start_date.before?(Date.today) %>
