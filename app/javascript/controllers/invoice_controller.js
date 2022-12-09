@@ -22,10 +22,12 @@ export default class extends Controller {
     }
     const duration = (end - start)
     const parking_price = Number(parking_spot.dataset.price)
-    if(event.currentTarget.checked){
-      total = total + (parking_price * duration)
-    }else{
-      total = total - (parking_price * duration)
+    if(!Number.isNaN(duration)){
+      if(event.currentTarget.checked){
+        total = total + (parking_price * duration)
+      }else{
+        total = total - (parking_price * duration)
+      }
     }
     this.priceTarget.innerHTML = total
     return total
