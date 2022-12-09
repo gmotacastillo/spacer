@@ -59,8 +59,9 @@ color: rgb(109, 109, 109);
   margin: 15px;
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
-  width: 500px;
-  height: 28rem;
+  width: 100%;
+  height: auto;
+  min-height: 60%;
 }
 
 .bottom-container-left {
@@ -68,8 +69,7 @@ color: rgb(109, 109, 109);
   margin: 15px;
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
-  min-width: 60%;
-  height: 28rem;
+  width: 100%;
   overflow-y: scroll;
 }
 
@@ -92,11 +92,14 @@ color: rgb(0, 0, 0) ;
   margin: 15px;
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.356) 0px 0px 28px 0px;
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
-
+.bottom-container{
+  display: flex;
+  flex-direction: row;
+}
 // hover stuff
 
 .upper-container-items:hover{
@@ -109,4 +112,22 @@ color: rgb(0, 0, 0) ;
 }
 .upper-container-items:hover i{
   color: white;
+}
+
+
+// media
+
+@media (min-width:1200px) {
+  .bottom-container{
+    height: 80%;
+    .bottom-container-left{
+      height:100%
+    }
+  }
+  // .chart {
+  //   flex:1;
+  //   canvas{
+  //     width: 100% !important;
+  //   }
+  // }
 }
